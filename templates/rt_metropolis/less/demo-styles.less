@@ -1,0 +1,374 @@
+/**
+* @version   $Id: demo-styles.less 4947 2012-11-01 15:47:25Z kevin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+// Demo Image
+.rt-image {
+	position: relative;
+}
+.rt-image img {
+	max-width: 100%;
+	height: auto;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+// Frontpage MainBody 
+
+.component-content .nov12-home .items-leading {
+	margin-bottom: 10px;
+}
+
+// Sidebar RokGallery
+.fp-sidebar-rokgallery .rg-gm-slice {
+	background: none;
+	box-shadow: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.fp-sidebar-rokgallery .rg-gm-slice-item {
+	padding: 0;
+	border: 0;
+}
+.fp-sidebar-rokgallery .rg-gm-slice-item:hover {
+	background: none;
+	box-shadow: none;
+}
+
+// MainBottom Images
+.rt-image-description {
+	color: #fff;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index:1000;
+	.transition(opacity 0.1s ease-out);
+	span {
+		margin-top: 25px;
+		margin-left: 15px;
+		line-height: 0.5em;
+	}
+	h4 {
+		padding: 0 15px;
+		margin-top: 15px;
+		margin-bottom: 8px;
+		font-family: 'SourceSansProExtraLight',Helvetica,Arial,sans-serif;
+		font-size: 2.8em;
+		font-weight: normal;
+		line-height: 1.1em;
+	}
+	p {
+		padding: 0 15px;
+		font-size: 1.5em;
+	}
+	a.readon {
+		margin-left: 15px;
+		span {
+			margin-left: 0;
+		}
+	}
+}
+.rt-image:hover .rt-image-description {
+	bottom: 0;
+	opacity: 1;
+}
+
+// Footer List
+ul.rt-demo-footer-menu {
+	padding-left: 0;
+	li {
+		list-style-type: none;
+		margin-bottom: 25px;
+		a {
+			font-size: 1.2em;
+			padding: 8px 0 8px 40px;
+			background-position: 0 -707px;
+			background-image: url("../images/dark/small-arrows.png");
+			background-repeat: no-repeat;
+		}
+	}
+}
+.rt-light {
+	ul.rt-demo-footer-menu {
+		li {
+			a {
+				background-image: url("../images/light/small-arrows.png");
+			}
+		}
+	}
+}
+
+// Custom Module
+.fp-recent-users .gantry-width-spacer {
+	margin: 5px;
+}
+
+// Custom Typography
+.promo1 {
+	font-weight: normal;
+	font-size: 380%;
+	line-height: 1.8em;
+}
+.promo2, .promo3 {
+	font-weight: normal;
+	letter-spacing: -1px;
+	line-height: 1.3em;
+}
+.promo2 {
+	font-size: 350%;
+}
+.promo3 {
+	font-size: 200%;
+	opacity: 0.5;
+}
+.rt-big-icon {
+	font-size: 7.0em;
+	line-height: 1.0em;
+}
+.gantry-example {
+	position: relative;
+	margin: 15px 0;
+	padding: 39px 19px 14px;
+	*padding-top: 19px;
+	border-radius: 4px;
+	.table, .well, blockquote {margin-bottom: 5px;}
+	.lead {font-size: 18px;line-height: 24px;}
+	> p:last-child {margin-bottom: 0;}
+	+ .prettyprint {margin-top: -20px;padding-top: 15px;}
+	&:after {
+		content: "Example";
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		padding: 3px 7px;
+		font-size: 12px;
+		font-weight: bold;
+		border-radius: 4px 0 4px 0;
+		font-style: normal;
+	}
+}
+form.gantry-example {
+	padding-bottom: 19px;
+}
+.rt-block-link {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+// Standard Inline Structural Adjustments
+body .rt-center {
+	text-align: center;
+}
+body .rt-noborder {
+	border: 0 !important;
+	box-shadow: none !important;
+}
+body .rt-floatleft {
+	float: left;
+	margin-right: 15px;
+	margin-left: 0;
+}
+body .rt-floatright {
+	float: right;
+	margin-left: 15px;
+	margin-right: 0;
+}
+body .normalfont, body .normalfont li {
+	font-size: 100% !important;
+	line-height: inherit !important;
+}
+body .noitalic {
+	font-style: normal !important;
+}
+body .nobold, body .nobold a, body .nobold li {
+	font-weight: normal !important;
+}
+body .nomarginall, body .rt-block.nomarginall, body ul.nomarginall, body li.nomarginall {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+body .nopaddingall, body .rt-block.nopaddingall, body ul.nopaddingall, body li.nopaddingall {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+body .nomargintop, body .rt-block.nomargintop, body ul.nomargintop, body li.nomargintop {
+	margin-top: 0 !important;
+}
+body .nomarginbottom, body .rt-block.nomarginbottom, body ul.nomarginbottom, body li.nomarginbottom {
+	margin-bottom: 0 !important;
+}
+body .nomarginleft, body .rt-block.nomarginleft, body ul.nomarginleft, body li.nomarginleft {
+	margin-left: 0 !important;
+}
+body .nomarginright, body .rt-block.nomarginright, body ul.nomarginright, body li.nomarginright {
+	margin-right: 0 !important;
+}
+body .nopaddingtop, body .rt-block.nopaddingtop, body ul.nopaddingtop, body li.nopaddingtop {
+	padding-top: 0 !important;
+}
+body .nopaddingbottom, body .rt-block.nopaddingbottom, body ul.nopaddingbottom, body li.nopaddingbottom {
+	padding-bottom: 0 !important;
+}
+body .nopaddingleft, body .rt-block.nopaddingleft, body ul.nopaddingleft, body li.nopaddingleft {
+	padding-left: 0 !important;
+}
+body .nopaddingright, body .rt-block.nopaddingright, body ul.nopaddingright, body li.nopaddingright {
+	padding-right: 0 !important;
+}
+body .smallmarginbottom {
+	margin-bottom: 5px !important;
+}
+body .smallmargintop {
+	margin-top: 5px !important;
+}
+body .medmarginbottom {
+	margin-bottom: 10px !important;
+}
+body .medmargintop {
+	margin-top: 10px !important;
+}
+body .largemarginbottom {
+	margin-bottom: 15px !important;
+}
+body .largemargintop {
+	margin-top: 15px !important;
+}
+body .smallmarginleft {
+	margin-left: 5px !important;
+}
+body .smallmarginright {
+	margin-right: 5px !important;
+}
+body .medmarginleft {
+	margin-left: 10px !important;
+}
+body .medmarginright {
+	margin-right: 10px !important;
+}
+body .largemarginleft {
+	margin-left: 15px !important;
+}
+body .largemarginright {
+	margin-right: 15px !important;
+}
+body .smallpaddingbottom {
+	padding-bottom: 5px !important;
+}
+body .smallpaddingtop {
+	padding-top: 5px !important;
+}
+body .medpaddingbottom {
+	padding-bottom: 10px !important;
+}
+body .medpaddingtop {
+	padding-top: 10px !important;
+}
+body .largepaddingbottom {
+	padding-bottom: 15px !important;
+}
+body .largepaddingtop {
+	padding-top: 15px !important;
+}
+body .smallpaddingleft {
+	padding-left: 5px !important;
+}
+body .smallpaddingright {
+	padding-right: 5px !important;
+}
+body .medpaddingleft {
+	padding-left: 10px !important;
+}
+body .medpaddingright {
+	padding-right: 10px !important;
+}
+body .largepaddingleft {
+	padding-left: 15px !important;
+}
+body .largepaddingright {
+	padding-right: 15px !important;
+}
+body .rt-relative {
+	position: relative;
+}
+body .custom.largepaddingright, body .custom.largepaddingleft, body .custom.largepaddingtop, body .custom.largepaddingbottom, body .custom.medpaddingright, body .custom.medpaddingleft, body .custom.medpaddingtop, body .custom.medpaddingbottom, body .custom.smallpaddingright, body .custom.smallpaddingleft, body .custom.smallpaddingtop, body .custom.smallpaddingbottom, body .custom.largemarginright, body .custom.largemarginleft, body .custom.largemargintop, body .custom.largemarginbottom, body .custom.medmarginright, body .custom.medmarginleft, body .custom.medmargintop, body .custom.medmarginbottom, body .custom.smallmarginright, body .custom.smallmarginleft, body .custom.smallmargintop, body .custom.smallmarginbottom {
+	padding: 0 0 0 0 !important;margin: 0 0 0 0 !important;
+}
+body .custom.rt-floatleft, body .custom.rt-floatright {
+	float: none;
+	margin: 0 0 0 0 !important;
+}
+
+// RTL Stuff
+body.rtl .rt-floatleft {
+	float: right;
+	margin-right: 0;
+	margin-left: 15px;
+}
+body.rtl .rt-floatright {
+	float: left;
+	margin-left: 0;
+	margin-right: 15px;
+}
+body.rtl .nomarginleft, body.rtl .rt-block.nomarginleft, body.rtl ul.nomarginleft, body.rtl li.nomarginleft {
+	margin-right: 0;
+}
+body.rtl .nomarginright, body.rtl .rt-block.nomarginright, body.rtl ul.nomarginright, body.rtl li.nomarginright {
+	margin-left: 0;
+}
+body.rtl .nopaddingleft, body.rtl .rt-block.nopaddingleft, body.rtl ul.nopaddingleft, body.rtl li.nopaddingleft {
+	padding-right: 0;
+}
+body.rtl .nopaddingright, body.rtl .rt-block.nopaddingright, body.rtl ul.nopaddingright, body.rtl li.nopaddingright {
+	padding-left: 0;
+}
+body.rtl .smallmarginleft {
+	margin-right: 5px;
+}
+body.rtl .smallmarginright {
+	margin-left: 5px;
+}
+body.rtl .medmarginleft {
+	margin-right: 10px;
+}
+body.rtl .medmarginright {
+	margin-left: 10px;
+}
+body.rtl .largemarginleft {
+	margin-right: 15px;
+}
+body.rtl .largemarginright {
+	margin-left: 15px;
+}
+body.rtl .smallpaddingleft {
+	padding-right: 5px;
+}
+body.rtl .smallpaddingright {
+	padding-left: 5px;
+}
+body.rtl .medpaddingleft {
+	padding-right: 10px;
+}
+body.rtl .medpaddingright {
+	padding-left: 10px;
+}
+body.rtl .largepaddingleft {
+	padding-right: 15px;
+}
+body.rtl .largepaddingright {
+	padding-left: 15px;
+}
+body.rtl .rt-demo-block {
+	float: right;
+}

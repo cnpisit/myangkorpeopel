@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension client="site" method="upgrade" type="module" version="2.5">
+    <name>RokStories</name>
+    <author>RocketTheme, LLC</author>
+    <creationDate>March 21, 2013</creationDate>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2013 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>1.13</version>
+    <description>RokStories</description>
+    <files>
+        <filename module="mod_rokstories">mod_rokstories.php</filename>
+        <folder>admin</folder>
+        <filename>thumbnail.inc.php</filename>
+        <filename>install.script.php</filename>
+        <folder>includes</folder>
+        <folder>images</folder>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <filename>MD5SUMS</filename>
+        <filename>ajax.php</filename>
+        <filename>helper.php</filename>
+        <filename>RT-LICENSE.php</filename>
+    </files>
+
+    <languages>
+        <language tag="en-GB">en-GB.mod_rokstories.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset addfieldpath="/modules/mod_rokstories/fields" name="basic">
+                <field default="" description="" label="" name="" type="k2check"/>
+                <field default="1" description="whether to load builtin CSS files. Useful when you want to write your own style and don't want to overwrite." label="Load built-in StyleSheet" name="load_css" type="radio">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field default="layout1" description="Layout type to use for the module" label="Layout Type" name="layout_type" type="list">
+                    <option value="layout1">Default</option>
+                    <option value="layout2">Showcase</option>
+                    <option value="layout3">Compat Showcase</option>
+                    <option value="layout4">Compat Showcase with Numbers</option>
+                    <option value="layout5">Masked Showcase</option>
+                    <option value="layout6">Scroller</option>
+                    <option value="layout7">Scroller Showcase</option>
+                    <option value="layout8">Showcase Tabs</option>
+                </field>
+
+                <field class="ifk2" default="joomla" description="whether to use Joomla Core Content, or K2 Content" label="Content Type" name="content_type" type="contenttype">
+                    <option value="joomla">Joomla Core Content</option>
+                    <option value="k2">K2 Content</option>
+                </field>
+
+                <field class="joomla content_type" label="Joomla Options" name="joomla" type="break"/>
+
+                <field class="joomla content_type" default="" description="Selects Articles from one or more Categories. If no selection will show all categories as default" extension="com_content" label="JCATEGORY" multiple="true" name="catid" size="10" type="category">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+
+                <field default="1" description="Show/Hide items designated for the Frontpage - only works when in Content Items only mode" label="Frontpage Items" name="show_front" type="radio">
+                    <option value="1">Show</option>
+                    <option value="0">Hide</option>
+                    <option value="2">Only Frontpage Items</option>
+                </field>
+
+                <field class="joomla content_type" default="0" description="Filter by author" label="Authors" name="user_id" type="list">
+                    <option value="0">Anyone</option>
+                    <option value="by_me">Added or modified by me</option>
+                    <option value="not_me">Not added or modified by me</option>
+                </field>
+
+                <field class="joomla content_type" default="text" description="" label="Article Image" name="joomla_image" type="list">
+                    <option value="full">Full Article Image</option>
+                    <option value="intro">Intro Image</option>
+                    <option value="text">Image Extracted from Article</option>
+
+                </field>
+
+                <field class="k2 content_type" label="K2 Options" name="k2" type="break"/>
+                <field class="k2 content_type" default="" description="" label="Select a category" multiple="true" name="k2_category" size="10" type="k2categories"/>
+                <field class="k2 content_type" default="0" description="" label="Include Children" name="k2_children" type="list">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field class="k2 content_type" default="1" description="" label="K2_FEATURED_ITEMS" name="k2_featured" type="list">
+                    <option value="0">Hide</option>
+                    <option value="1">Show</option>
+                    <option value="2">Only Featured Items</option>
+                </field>
+                <field class="k2 content_type" default="L" description="" label="K2_IMAGE_SIZE" name="k2_image_size" type="list">
+                    <option value="XS">XSmall</option>
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">XLager</option>
+                </field>
+
+                <field default="Additional Content Options" description="" label="" name="spacer" type="break"/>
+
+                <field default="4" description="Number of articles to display from the section/category" label="Max Number of Articles" name="count" type="text"/>
+
+                <field default="" description="" label="Item Ordering" name="itemsOrdering" type="list">
+                    <option value="">Default</option>
+                    <option value="date">Oldest first</option>
+                    <option value="rdate">Most recent first</option>
+                    <option value="alpha">Title Alphabetical</option>
+                    <option value="ralpha">Title Reverse-Alphabetical</option>
+                    <option value="order">Ordering</option>
+                    <option value="random">Random</option>
+                </field>
+
+                <field default="a,i,br" description="List the HTML tags you want to allow in your content, separated by comma. All the others will be stripped out." label="Allowed HTML tags" name="strip_tags" type="text"/>
+
+                <field default="right" description="Whether to show the content on left, or right." label="Content position" name="content_position" type="list">
+                    <option value="right">Left</option>
+                    <option value="left">Right</option>
+                    <option value="none">None</option>
+                </field>
+
+                <field default="1" description="Show the Article Title" label="Show Title" name="show_article_title" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Show the Article Date" label="Show Date" name="show_created_date" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Show the Article" label="Show Article" name="show_article" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Show Read More" label="Show Link" name="show_article_link" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Readon button style. Can be either legacy or standard" label="Readon Style" name="legacy_readmore" type="radio">
+                    <option value="1">Legacy</option>
+                    <option value="0">Standard</option>
+                </field>
+
+                <field default="90" description="" label="Width of thumbnail (px)" name="thumb_width" type="text"/>
+                <field default="auto" description="Pixel width for fixed width, set to 'auto' for defaulting to the full image width size." label="Width of thumbnail display (px)" name="start_width" type="text"/>
+                <field default="0" description="A filter for the authors" label="Authors" name="user_id" type="list">
+                    <option value="0">Anyone</option>
+                    <option value="by_me">Added or modified by me</option>
+                    <option value="not_me">Not added or modified by me</option>
+                </field>
+
+                <field default="0" description="Which article shown as first. First is 0, second 1, etc." label="First article" name="start_element" type="text"/>
+                <field default="0.3" description="Opacity value of the thumbnails. Goes from 0 (transparent) to 1 (opaque)" label="Thumbs Opacity" name="thumbs_opacity" type="text"/>
+                <field default="0" description="Sets Rokstories in a fixed height to avoid loading jumps if not wanted." label="Fixed Height" name="fixed_height" type="text"/>
+                <field default="click" description="Wheter to change news via click or mouseover" label="Navigation Interaction" name="mouse_type" type="list">
+                    <option value="click">Click</option>
+                    <option value="mouseenter">Mouseover</option>
+                </field>
+                <field default="0" description="Wheter to enable the autoplay" label="Autoplay" name="autoplay" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="5000" description="Delay from each update" label="Autoplay Delay" name="autoplay_delay" type="text"/>
+
+                <field default="Additional Showcase Layout Type Content Options" description="" label="" name="@spacer" type="break"/>
+
+                <field default="1" description="Show the Article Label  Title when in Layout2 mode." label="Show Label Title" name="show_label_article_title" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Show Arrows on RokStories Image when in Layout2 mode." label="Show Arrows" name="show_arrows" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Show Circles on RokStories when in Layout6 mode." label="Show Circles" name="show_circles" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="inside" description="Whether to show the arrows 'inside' or 'outside' the image-container." label="Arrows Placement" name="arrows_placement" type="radio">
+                    <option value="inside">Inside</option>
+                    <option value="outside">Outside</option>
+                </field>
+                <field default="0" description="Whether to show the next or previous Preview when hovering the arrows." label="Show Previews on Arrows" name="show_thumbs" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Show the Previews at a Fixed position" label="Fixed Previews" name="fixed_thumb" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Whether to link the titles to the article." label="Linked Titles" name="link_titles" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Whether to link the labels to the article." label="Linked Labels" name="link_labels" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Whether to link the images to the article." label="Linked Images" name="link_images" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Whether to show the Image Mask for Layout 'Masked Layout'" label="Show Image Mask" name="show_mask" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="topdown" description="Type of animation for the descriptions. Works only on Masked Showcase." label="Description Animation" name="mask_desc_dir" type="list">
+                    <option value="topdown">Top Down</option>
+                    <option value="bottomup">Bottom Up</option>
+                    <option value="fade">Fade</option>
+                </field>
+                <field default="bottomup" description="Type of animation for the images. Works only on Masked Showcase." label="Images Animation" name="mask_imgs_dir" type="list">
+                    <option value="topdown">Top Down</option>
+                    <option value="bottomup">Bottom Up</option>
+                    <option value="fade">Fade</option>
+                </field>
+
+                <field default="1000" description="Duration of the scroller animation" label="Scroller Duration (ms)" name="scrollerDuration" type="text"/>
+                <field default="Expo.easeInOut" description="The effect to be used for the transition" label="Transition Effect" name="scrollerTransition" type="list">
+                    <option value="linear">linear</option>
+                    <option value="Quad.easeOut">Quad.easeOut</option>
+                    <option value="Quad.easeIn">Quad.easeIn</option>
+                    <option value="Quad.easeInOut">Quad.easeInOut</option>
+                    <option value="Cubic.easeOut">Cubic.easeOut</option>
+                    <option value="Cubic.easeIn">Cubic.easeIn</option>
+                    <option value="Cubic.easeInOut">Cubic.easeInOut</option>
+                    <option value="Quart.easeOut">Quart.easeOut</option>
+                    <option value="Quart.easeIn">Quart.easeIn</option>
+                    <option value="Quart.easeInOut">Quart.easeInOut</option>
+                    <option value="Quint.easeOut">Quint.easeOut</option>
+                    <option value="Quint.easeIn">Quint.easeIn</option>
+                    <option value="Quint.easeInOut">Quint.easeInOut</option>
+                    <option value="Expo.easeOut">Expo.easeOut</option>
+                    <option value="Expo.easeIn">Expo.easeIn</option>
+                    <option value="Expo.easeInOut">Expo.easeInOut</option>
+                    <option value="Circ.easeOut">Circ.easeOut</option>
+                    <option value="Circ.easeIn">Circ.easeIn</option>
+                    <option value="Circ.easeInOut">Circ.easeInOut</option>
+                    <option value="Sine.easeOut">Sine.easeOut</option>
+                    <option value="Sine.easeIn">Sine.easeIn</option>
+                    <option value="Sine.easeInOut">Sine.easeInOut</option>
+                    <option value="Back.easeOut">Back.easeOut</option>
+                    <option value="Back.easeIn">Back.easeIn</option>
+                    <option value="Back.easeInOut">Back.easeInOut</option>
+                    <option value="Bounce.easeOut">Bounce.easeOut</option>
+                    <option value="Bounce.easeIn">Bounce.easeIn</option>
+                    <option value="Bounce.easeInOut">Bounce.easeInOut</option>
+                    <option value="Elastic.easeOut">Elastic.easeOut</option>
+                    <option value="Elastic.easeIn">Elastic.easeIn</option>
+                    <option value="Elastic.easeInOut">Elastic.easeInOut</option>
+                </field>
+                <field default="1" description="Show Controls of layout 6" label="Show Controls" name="show_controls" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field default="" description="" label="" name="spacer" type="break"/>
+                <field default="-40" description="" label="Left Preview Offset X" name="left_offset_x" type="text"/>
+                <field default="-100" description="" label="Left Preview Offset Y" name="left_offset_y" type="text"/>
+                <field default="-30" description="" label="Right Preview Offset X" name="right_offset_x" type="text"/>
+                <field default="-100" description="" label="Right Preview Offset Y" name="right_offset_y" type="text"/>
+                <field default="" description="" label="" name="spacer" type="spacer"/>
+                <field default="-40" description="" label="Left Fixed Preview Offset X" name="left_f_offset_x" type="text"/>
+                <field default="-100" description="" label="Left Fixed Preview Offset Y" name="left_f_offset_y" type="text"/>
+                <field default="-30" description="" label="Right Fixed Preview Offset X" name="right_f_offset_x" type="text"/>
+                <field default="-100" description="" label="Right Fixed Preview Offset Y" name="right_f_offset_y" type="text"/>
+
+            </fieldset>
+            <fieldset name="advanced">
+                <field description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" name="moduleclass_sfx" type="text"/>
+
+                <field default="0" name="cache" type="hidden">
+                </field>
+                <field default="1" description="COM_MODULES_FIELD_CACHING_DESC" label="COM_MODULES_FIELD_CACHING_LABEL" name="module_cache" type="list">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field default="900" description="COM_MODULES_FIELD_CACHE_TIME_DESC" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" name="cache_time" type="text"/>
+                <field default="static" name="cachemode" type="hidden">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">
+            http://updates.rockettheme.com/joomla/updates.xml
+        </server>
+    </updateservers>
+</extension>

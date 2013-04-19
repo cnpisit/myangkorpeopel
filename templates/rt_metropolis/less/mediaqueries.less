@@ -1,0 +1,643 @@
+/**
+* @version   $Id: mediaqueries.less 7463 2013-02-12 17:11:59Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+// Large Mode
+@media only screen and (min-width: 1200px) {
+	.visible-large {
+		display: inherit !important;
+	}
+	.hidden-large {
+		display: none !important;
+	}
+	.visible-desktop {
+		display: inherit !important;
+	}
+	.hidden-desktop {
+		display: none !important;
+	}
+}
+
+// Desktop Modes
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	.visible-large {display: none !important;}
+	.hidden-large {display: inherit !important;}
+	.visible-desktop {display: inherit !important;}
+	.hidden-desktop {display: none !important;}
+
+	// Core
+	.title, .component-content h2 {
+		font-size: 2.4em;
+	}
+
+	// Module Variations
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {
+		font-size: 9em;
+	}
+
+	// RokSprocket - Features - Showcase
+	body .layout-showcase {
+		.sprocket-features-content {
+			width: 30%;
+		}
+		.sprocket-features-img-container {
+			width: 66%;
+		}
+		.sprocket-features-title {
+			font-size: 260%;
+		}
+		.sprocket-features-desc {
+			margin-top: 15px;
+			> span {
+				font-size: 1em;
+			}
+		}
+		.sprocket-features-pagination {
+			li {
+				width: 24px;
+				height: 24px;
+				span {
+					line-height: 24px;
+				}
+			}
+		}
+		.sprocket-features-arrows {
+			bottom: 55px;
+		}
+	}
+
+	// Demo Styles
+	body .promo1 {font-size: 350%;}
+	body .promo2 {font-size: 300%;}
+	body .promo3 {font-size: 150%;}
+	
+	body .rt-image-description {
+		span {
+			margin-top: 15px;
+		}
+		.rt-big-icon {
+			font-size: 5.5em;
+		}
+		h4 {
+			font-size: 2em;
+			margin-top: 10px;
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
+}
+
+@media (min-width: 1199px) and (max-width: 1345px) {
+	.rt-social-buttons {
+		display: none;
+	}
+}
+
+@media (min-width: 960px) and (max-width: 1085px) {
+	.rt-social-buttons {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 891px) {
+	.rt-social-buttons {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+	.visible-tablet {display: inherit !important;}
+	.hidden-tablet {display: none !important;}
+	.hidden-desktop {display: inherit !important;}
+	.visible-desktop {display: none !important;}
+	.visible-large {display: none !important;}
+	.hidden-large {display: inherit !important;}
+
+	// Core
+	body {
+		h1,h2,h3 {
+			font-size: 200%;
+			&.title {
+				font-size: 200%;
+			}
+		}
+	}
+
+	// Module Variations
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {
+		font-size: 7em;
+	}
+
+	// RokSprocket - Features - Showcase
+	body .layout-showcase {
+		.sprocket-features-title {
+			font-size: 195%;
+		}
+		.sprocket-features-pagination {
+			li {
+				width: 24px;
+				height: 24px;
+				span {
+					line-height: 24px;
+				}
+			}
+		}
+		.sprocket-features-arrows {
+			bottom: 55px;
+		}
+		.sprocket-features-content {
+			width: 29%;
+			.sprocket-features-desc {
+				font-size: 83%;
+			}
+			.readon {
+				padding: 0 15px;
+				background-position: 108px -1002px;
+				&:hover {
+					background-position: 108px -1089px;
+				}
+			}
+		}
+	}
+	.layout-showcase.sprocket-features {
+		.sprocket-features-arrows {
+			.arrow {
+				top: inherit;
+				width: 30px;
+				height: 30px;
+				background-image: url(../images/dark/small-arrows.png);
+				&.next {
+					background-position: 0 -198px;
+					right: 10px;
+					top: 50%;
+					&:hover {
+						background-position: 0 -712px;
+					}
+				}
+				&.prev {
+					background-position: 0 -370px;
+					left: inherit;
+					left: 34.8%;
+					top: 50%;
+					&:hover {
+						background-position: 0 -896px;
+					}
+				}
+			}
+		}
+	}
+
+	// RokSprocket - Tabs
+	body {
+		.sprocket-tabs-nav {
+			li {
+				.sprocket-tabs-inner {
+					font-size: 90%;
+					padding: 6px 8px;
+				}
+			}
+		}
+	}
+
+	// Contact Form
+	body #contact-form {
+		legend {
+			font-size: 1em;
+			line-height: 2em;
+			width: 500px;
+			padding-bottom: 15px;
+		}
+		textarea {
+			width: 300px !important;
+			resize: none;
+		}
+	}	
+
+	// K2
+	body #k2Container h2, body #k2Container h2 a, body #k2Container h3, body #k2Container h3 a {font-size: 1.5em !important;}
+	body #k2Container .subCategoryContainer, body #k2Container .itemContainer, body #k2Container .latestItemsContainer {width: 100% !important; float: none;}
+	body #k2Container.itemListView .itemListCategory h2, body #k2Container.latestView .latestItemsCategory h2 {margin: 10px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory h2 {margin: 10px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory {margin-bottom: 5px !important;}
+	body #k2Container.itemView .itemToolbar, body #k2Container.itemView .itemRatingBlock, body #k2Container.itemView .itemAuthorLatest, body #k2Container.itemView .itemRelated {width: 100% !important; float: none;}
+
+	// Demo Styles
+	body .promo1 {font-size: 300%;}
+	body .promo2 {font-size: 250%;}
+	body .promo3 {font-size: 120%;}
+	
+	body .rt-image-description {
+		span {
+			margin-top: 10px;
+		}
+		.rt-big-icon {
+			font-size: 3.5em;
+		}
+		h4 {
+			font-size: 1.7em;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		p {
+			font-size: 1em;
+			margin-bottom: 5px;
+		}
+	}	
+}
+
+@media only screen and (min-width: 768px) {
+	.rt-menu-mobile {display: none;}
+}
+
+// Mobile Modes
+@media (max-width: 767px) {
+	body {
+    	padding: 0;
+  	}
+	.visible-phone {
+		display: inherit !important;
+	}
+	.hidden-phone {
+		display: none !important;
+	}
+	.hidden-desktop {
+		display: inherit !important;
+	}
+	.visible-desktop {
+		display: none !important;
+	}
+	.hidden-large {
+		display: inherit !important;
+	}
+	.visible-large {
+		display: none !important;
+	}
+	
+	// Logo
+	.logo-block #rt-logo {margin: 0 auto;}
+
+	// Joomla Core
+	body .component-content {
+		.column-1, .column-2, .column-3 {
+			width: 100% !important;
+			float: none !important;
+			margin: 0 !important;
+		}
+	}
+	
+	.side-panel-container {
+		display: none;
+	}
+
+	// RokSprocket - Features - Showcase
+	body .layout-showcase.sprocket-features {
+		.sprocket-features-title {
+			font-size: 170%;
+		}
+		.sprocket-features-pagination {
+			display: none;
+		}
+		.sprocket-features-content {
+			float: none;
+			width: auto;
+			margin-top: 10px;
+		}
+		.sprocket-features-img-container {
+			float: none;
+			width: 100%;
+			margin-left: 0;
+			position: static;
+		}
+		.sprocket-features-desc {
+			display: none;
+		}
+		.sprocket-features-arrows {
+			bottom: 19px;
+			width: 70px;
+			position: absolute;
+			right: 10px;
+			left: inherit;
+			.arrow {
+				top: inherit;
+				width: 30px;
+				height: 30px;
+				background-image: url(../images/dark/small-arrows.png);
+				&.next {
+					right: 0;
+					background-position: 0 -198px;
+					&:hover {
+						background-position: 0 -712px;
+					}
+				}
+				&.prev {
+					left: 0;
+					background-position: 0 -370px;
+					&:hover {
+						background-position: 0 -896px;
+					}
+				}
+			}
+		}
+	}
+
+	// Extras
+	.gantry-width-20, .gantry-width-25, .gantry-width-30, .gantry-width-33, .gantry-width-40, .gantry-width-50, .gantry-width-60, .gantry-width-66, .gantry-width-70, .gantry-width-75, .gantry-width-80 {width: 100%;}
+	.gantry-width-spacer {margin: 5px;}
+
+	.row {
+		margin: 0;
+		display: block;
+
+		.cell {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.form-horizontal {
+		.control-group {
+			.control-label {
+				float:none;
+				width: auto;
+				text-align:left;
+			}
+			.controls {
+				margin-left: 0;
+			}
+		}
+	}
+	select {
+		width: 100%;
+	}
+	.rt-social-buttons {
+		display: none;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 650px) {
+	body .sprocket-features {
+		.sprocket-features-arrows {
+			bottom: 19px;
+			width: 70px;
+			position: absolute;
+			right: 10px;
+			left: inherit;
+			.arrow {
+				top: inherit;
+				width: 30px;
+				height: 30px;
+				background-image: url(../images/dark/small-arrows.png);
+				&.next {
+					right: 0;
+					background-position: 0 -198px;
+					&:hover {
+						background-position: 0 -712px;
+					}
+				}
+				&.prev {
+					left: 0;
+					background-position: 0 -370px;
+					&:hover {
+						background-position: 0 -896px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+	// Typography
+	.title, .component-content h2 {
+		font-size: 265%;
+	}
+
+	// RokSprocket - Showcase 
+	body .layout-slideshow {
+		.sprocket-features-pagination {
+			display: none;
+		}
+		.sprocket-features-img-container {
+			width: 100%;
+			float: none;
+			margin-left: 0;
+		}
+		.sprocket-features-arrows {
+			bottom: 41px;
+			width: 70px;
+			position: relative;
+			left: 80%;
+			.arrow {
+				top: inherit;
+				width: 30px;
+				height: 30px;
+				background-image: url(../images/dark/small-arrows.png);
+				&.next {
+					background-position: 0 -198px;
+					&:hover {
+						background-position: 0 -712px;
+					}
+				}
+				&.prev {
+					background-position: 0 -370px;
+					&:hover {
+						background-position: 0 -896px;
+					}
+				}
+			}
+		}
+	}
+
+	// RokSprocket - Tabs
+	body {
+		.sprocket-tabs-nav {
+			li {
+				.sprocket-tabs-inner {
+					font-size: 100%;
+					padding: 6px 10px;
+				}
+			}
+		}
+	}
+
+	// RokSprocket - Mosaic
+	body {
+		.sprocket-mosaic {
+			.sprocket-mosaic-title {
+				font-size: 125%;
+				a {
+					font-size: 125%;
+				}
+			}
+			.sprocket-mosaic-header {
+				padding: 10px 8px;
+			}
+			.sprocket-mosaic-order, .sprocket-mosaic-filter {
+				li {
+					padding: 1px 6px;
+					font-size: 1em;
+				}
+			}
+			.sprocket-readmore, .sprocket-mosaic-tags {
+				font-size: 85%;
+			}
+		}
+		.sprocket-mosaic-columns-1, .sprocket-mosaic-columns-2, .sprocket-mosaic-columns-3, .sprocket-mosaic-columns-4, .sprocket-mosaic-columns-5, .sprocket-mosaic-columns-6 {
+			li {
+				width: 50%;
+			}
+		}
+	}
+
+	// K2
+	body #k2Container h2, body #k2Container h2 a, body #k2Container h3, body #k2Container h3 a {font-size: 1.3em !important;}
+	body #k2Container .subCategoryContainer, body #k2Container .itemContainer, body #k2Container .latestItemsContainer {width: 100% !important; float: none;}
+	body #k2Container.itemListView .itemListCategory h2, body #k2Container.latestView .latestItemsCategory h2 {margin: 5px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory h2 {margin: 5px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory {margin-bottom: 5px !important;}
+	body #k2Container.itemView .itemToolbar, body #k2Container.itemView .itemRatingBlock, body #k2Container.itemView .itemAuthorLatest, body #k2Container.itemView .itemRelated {width: 100% !important; float: none;}	
+
+	// Demo Styles
+	body .promo1 {font-size: 250%;}
+	body .promo2 {font-size: 200%;}
+	body .promo3 {font-size: 100%;}			
+}
+
+@media only screen and (max-width: 480px) {
+
+	// Typography
+	.title, .component-content h2 {
+		font-size: 200%;
+	}
+	.input-xxlarge, .input-xlarge, .input-large {
+		width: 100%;
+	}
+	input.span2, textarea.span2, .uneditable-input.span2 {
+		width: 90px;
+	}
+
+	// Module Variations
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {
+		font-size: 7em;
+	}
+
+	// RokSprocket - Features - Showcase
+	body .layout-showcase {
+		margin: -10px -30px -25px -29px;
+		.sprocket-features-pagination {
+			display: none;
+		}
+		.sprocket-features-img-container {
+			width: 100%;
+			float: none;
+			margin-left: 0;
+		}
+		.sprocket-features-arrows {
+			bottom: 19px;
+			width: 70px;
+			position: absolute;
+			right: 10px;
+			left: inherit;
+			.arrow {
+				top: inherit;
+				width: 30px;
+				height: 30px;
+				background-image: url(../images/dark/small-arrows.png);
+				&.next {
+					right: 0;
+					background-position: 0 -198px;
+					&:hover {
+						background-position: 0 -712px;
+					}
+				}
+				&.prev {
+					left: 0;
+					background-position: 0 -370px;
+					&:hover {
+						background-position: 0 -896px;
+					}
+				}
+			}
+		}
+	}
+
+	// RokSprocket - Mosaic
+	body {
+		.sprocket-mosaic {
+			margin: -25px -35px 0 -34px;
+			.sprocket-mosaic-header {
+				padding: 10px 8px;
+			}
+			.sprocket-mosaic-filter {
+				li {
+					padding: 1px 6px;
+					font-size: 0.75em;
+					margin-right: 6px;
+				}
+			}
+			.sprocket-mosaic-order {
+				li {
+					padding: 1px 6px;
+					font-size: 0.75em;
+					margin-left: 6px;
+				}
+			}
+			.sprocket-mosaic-item {
+				.sprocket-padding {
+					background-image: none;
+				}
+			}
+		}
+		// RokSprocket - Mosaic
+		.sprocket-mosaic-columns-1, .sprocket-mosaic-columns-2, .sprocket-mosaic-columns-3, .sprocket-mosaic-columns-4, .sprocket-mosaic-columns-5, .sprocket-mosaic-columns-6 {
+			li {
+				width: 100%;
+			}
+		}
+	}
+
+	// RokSprocket - Tabs
+	.sprocket-tabs-nav li {
+		width: 100%;
+	}
+
+	// RokAjaxSearch
+	#roksearch_results {
+		width: auto;
+	}
+
+	// Contact Form
+	body #contact-form {
+		legend {
+			font-size: 1em;
+			line-height: 2em;
+			width: 220px;
+			padding-bottom: 15px;
+		}
+		fieldset dt, fieldset dd {
+			float: none !important;
+		}
+		textarea {
+			width: 205px !important;
+			resize: none;
+		}
+	}	
+
+	// K2
+	body #k2Container h2, body #k2Container h2 a, body #k2Container h3, body #k2Container h3 a {font-size: 1.0em !important;}
+	body #k2Container .subCategoryContainer, body #k2Container .itemContainer, body #k2Container .latestItemsContainer {width: 100% !important; float: none;}
+	body #k2Container.itemListView .itemListCategory h2, body #k2Container.latestView .latestItemsCategory h2 {margin: 5px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory h2 {margin: 5px 0;}
+	body #k2Container.itemListView .itemListSubCategories .subCategory {margin-bottom: 5px !important;}
+	body #k2Container.itemView .itemToolbar, body #k2Container.itemView .itemRatingBlock, body #k2Container.itemView .itemAuthorLatest, body #k2Container.itemView .itemRelated {width: 100% !important; float: none;}
+
+	// Demo Styles
+	body .promo1 {font-size: 200%;}
+	body .promo2 {font-size: 150%;}
+	body .promo3 {font-size: 100%;}		
+}

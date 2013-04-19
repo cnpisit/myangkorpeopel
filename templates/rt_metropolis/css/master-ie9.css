@@ -1,0 +1,56 @@
+/**
+* @version   $Id: master-ie9.css 4955 2012-11-01 16:27:36Z kevin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+.readon, .button, button, input, .btn, .rt-block {
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+}
+
+ul.menu li.active.current > a:before, ul.menu li.active.current > .item:before, ul.menu li.active.current > .separator:before,
+ul.menu #current.active > a:before, ul.menu #current.active > .item:before, ul.menu #current.active > .separator:before {font-size: 15px;}
+.gf-menu .dropdown .modules .module-content .rt-floatleft {display: inline-block;}
+
+/* Buttons and Inputs */
+.button, .readon, .readmore, button.validate, #member-profile a, #member-registration a, .formelm-buttons button, .sprocket-mosaic-loadmore, #gantry-totop, .button:hover, .readon:hover, .readmore:hover, button.validate:hover, #member-profile a:hover, #member-registration a:hover, .formelm-buttons button:hover, .sprocket-mosaic-loadmore:hover, #gantry-totop:hover {filter: none !important;}
+
+/* Module Variations */
+.title3 .module-title, .title4 .module-title {filter: none;}
+.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 160px !important;}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 130px !important;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 100px !important;}
+}
+@media (max-width: 767px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 130px !important;}
+}
+
+.rt-image-description {zoom: 1;}
+
+/* RokSprocket */
+body .layout-showcase .sprocket-features-desc .readon {padding: 6px 52px 6px 20px;}
+.layout-showcase .sprocket-features-pagination li, body .sprocket-mosaic-filter li.active, body .sprocket-mosaic-order li.active, body .sprocket-mosaic-filter li:hover, body .sprocket-mosaic-order li:hover, .sprocket-mosaic .sprocket-mosaic-tags li, .sprocket-tabs-inner, .sprocket-mosaic-text-container {filter: none !important;}
+
+/* Features */
+#gantry-totop, #gantry-totop:hover {filter: none;}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+	body .layout-showcase .sprocket-features-img-container {margin-bottom: -5px;}
+}
+
+@media only screen and (max-width: 480px) {
+	body .layout-showcase .sprocket-features-img-container {margin-bottom: -5px;}
+}
+
+/* Demo Styles */
+ul.rt-demo-footer-menu {padding-left: 0;}
+ul.rt-demo-footer-menu li {list-style-type: none;margin-bottom: 25px;}
+ul.rt-demo-footer-menu li a {font-size: 1.2em;padding: 8px 0 8px 40px;background-position: 0 -707px;background-image: url("../images/dark/small-arrows.png");background-repeat: no-repeat;}
+.rt-light ul.rt-demo-footer-menu li a {
+				background-image: url("../images/light/small-arrows.png");}

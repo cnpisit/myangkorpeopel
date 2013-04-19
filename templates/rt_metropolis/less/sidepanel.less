@@ -1,0 +1,46 @@
+/**
+* @version   $Id: sidepanel.less 4703 2012-10-29 20:44:52Z josh $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+@import "mixins/index.less";
+@import "variables.less";
+
+.side-panel-container {
+	position: absolute;
+	left: 0;
+	top: 120px;
+	z-index: 10;
+}
+
+.side-panel-toggle {
+	position: absolute;
+	width: 22px;
+	height: 35px;
+	right: -22px;
+	top: 10px;
+	cursor: pointer;
+	z-index: 10;
+	.box-shadow(2px 0 3px rgba(0,0,0,0.5));
+}
+
+.side-panel-toggle:before {
+	position: absolute;
+	content: "\f053";
+	font-family: FontAwesome;
+	width: 22px;
+	height: 35px;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 39px;
+	font-weight: normal;
+}
+
+.side-panel-toggle.turkey:before {
+	content: "\f054";
+}
+
+.side-panel {
+	padding: 10px;
+}

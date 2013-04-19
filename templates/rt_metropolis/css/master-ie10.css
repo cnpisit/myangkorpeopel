@@ -1,0 +1,19 @@
+/**
+* @version   $Id: master-ie10.css 4823 2012-10-31 15:49:09Z kevin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 160px !important;}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 130px !important;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 100px !important;}
+}
+@media (max-width: 767px) {
+	.rt-block.icon-large[class^="icon-"]:before, .rt-block.icon-large[class*=" icon-"]:before {font-size: 130px !important;}
+}

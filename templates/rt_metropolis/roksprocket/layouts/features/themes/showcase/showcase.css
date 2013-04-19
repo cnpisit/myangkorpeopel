@@ -1,0 +1,44 @@
+/**
+* @version   $Id: showcase.css 4857 2012-10-31 21:03:39Z kevin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* Features - Layout Showcase - Core */
+.layout-showcase {position: relative;margin: -10px -17px -25px -17px;}
+.layout-showcase:after {display: table;content: "";*zoom: 1;clear: both;}
+.layout-showcase ul {list-style: none !important;margin: 0;padding: 0;}
+.layout-showcase .sprocket-features-container:after {content: '';clear: both;display: table;}
+
+/* Features - Layout Showcase - Content */
+.layout-showcase .sprocket-features-content {width: 30%;float: left;padding: 15px;}
+.layout-showcase .sprocket-features-title {font-size: 350%;font-weight: normal;line-height: 1.2em;display: inline;}
+.layout-showcase .sprocket-features-title a {line-height: 1.2em;}
+.layout-showcase .sprocket-features-desc {margin: 20px 0;font-size: 1.1em;line-height: 1.4em;font-weight: bold;}
+.layout-showcase .sprocket-features-desc > span {display: inline-block;}
+.layout-showcase .sprocket-features-list {position: relative;padding: 0 !important;-webkit-transform: translateZ(0); -webkit-font-smoothing: subpixel-antialiased;}
+.layout-showcase .sprocket-features-list li {position: absolute;top: 0;left: 0;opacity: 0;width: 100%;height: 100%;display: none;}
+.layout-showcase .sprocket-features-list li.active {position: static;height: auto;opacity: 1;display: block;}
+.layout-showcase .sprocket-features-img-container {width: 66%;float: right;margin-bottom: -5px;background-color: transparent;}
+.layout-showcase .sprocket-features-img-container a {font-size: 0;line-height: 0;}
+.layout-showcase .sprocket-features-content .readon {text-shadow: none;margin-top: 20px;font-size: 1.2em;border-radius: 40px;border: 2px solid;padding: 4px 40px 5px 15px;background-repeat: no-repeat;background-position: 96% -999px;}
+.layout-showcase .sprocket-features-content .readon:hover {background-position: 96% -1086px;}
+
+/* Features - Layout Showcase - Navigation */
+.layout-showcase .sprocket-features-arrows .arrow {position: absolute;margin-top: -39px;display: block;opacity: 0.7;cursor: pointer;z-index: 10;text-align: center;font-size: 2.8em;line-height: 0.5em;width: 78px;height: 78px;top: 50%;background-repeat: no-repeat;}
+.layout-showcase .sprocket-features-arrows .arrow span {display: none;}
+.layout-showcase .sprocket-features-arrows .arrow:hover {opacity: 1;}
+.layout-showcase .sprocket-features-arrows .arrow.next {right: 10px;background-position: 0 -591px;} 
+.layout-showcase .sprocket-features-arrows .arrow.next:hover {background-position: 0 -232px;}
+.layout-showcase .sprocket-features-arrows .arrow.prev {left: 34.8%;background-position: 0 -763px;}
+.layout-showcase .sprocket-features-arrows .arrow.prev:hover {background-position: 0 -404px;}
+.arrows-onhover .sprocket-features-arrows .arrow {opacity: 0;}
+.sprocket-features.arrows-onhover:hover .sprocket-features-arrows .arrow {opacity: 1;}
+.layout-showcase .sprocket-features-pagination {position: absolute;right: 30px;bottom: 25px;z-index: 10;padding: 0 !important;}
+.layout-showcase .sprocket-features-pagination-hidden {display: none;}
+.layout-showcase .sprocket-features-pagination li {display: inline-block;text-align: center;margin: 0;width: 30px;height: 30px;-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;cursor: pointer;vertical-align: middle;border: 2px solid;}
+.layout-showcase .sprocket-features-pagination li span {font-size: 1em;line-height: 30px;text-align: center;font-weight: bold;}
+
+/* Features - Layout Showcase - Transitions */
+.layout-showcase .sprocket-features-pagination li, .layout-showcase .sprocket-features-arrows .arrow {-webkit-transition: opacity 0.1s ease-in;-moz-transition: opacity 0.1s ease-in;-o-transition: opacity 0.1s ease-in;-ms-transition: opacity 0.1s ease-in;transition: opacity 0.1s ease-in;}
