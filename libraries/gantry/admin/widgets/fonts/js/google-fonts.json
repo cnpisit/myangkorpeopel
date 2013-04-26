@@ -87,8 +87,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "greek",
-    "latin"
+    "latin",
+    "greek"
    ]
   },
   {
@@ -370,9 +370,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -406,11 +406,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -533,12 +533,12 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -759,8 +759,8 @@
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -1243,8 +1243,8 @@
    "subsets": [
     "latin-ext",
     "greek-ext",
-    "greek",
-    "latin"
+    "latin",
+    "greek"
    ]
   },
   {
@@ -1299,8 +1299,8 @@
    "subsets": [
     "latin-ext",
     "greek-ext",
-    "greek",
-    "latin"
+    "latin",
+    "greek"
    ]
   },
   {
@@ -1534,10 +1534,10 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -1758,8 +1758,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -1906,11 +1906,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -2071,10 +2071,10 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "vietnamese"
    ]
   },
   {
@@ -2465,9 +2465,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -2585,6 +2585,17 @@
    ],
    "subsets": [
     "greek"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Gabriela",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3200,9 +3211,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -3382,11 +3393,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -3475,8 +3486,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -3651,8 +3662,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -3744,9 +3755,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -3959,8 +3970,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -3992,8 +4003,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -4138,6 +4149,20 @@
     "900"
    ],
    "subsets": [
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Merriweather Sans",
+   "variants": [
+    "300",
+    "regular",
+    "700",
+    "800"
+   ],
+   "subsets": [
+    "latin-ext",
     "latin"
    ]
   },
@@ -4502,8 +4527,8 @@
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -4633,8 +4658,46 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "latin"
+    "latin",
+    "vietnamese"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Noto Sans",
+   "variants": [
+    "regular",
+    "italic",
+    "700",
+    "700italic"
+   ],
+   "subsets": [
+    "latin-ext",
+    "greek-ext",
+    "latin",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Noto Serif",
+   "variants": [
+    "regular",
+    "italic",
+    "700",
+    "700italic"
+   ],
+   "subsets": [
+    "latin-ext",
+    "greek-ext",
+    "latin",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -4664,8 +4727,8 @@
     "regular"
    ],
    "subsets": [
-    "greek",
-    "latin"
+    "latin",
+    "greek"
    ]
   },
   {
@@ -4824,12 +4887,12 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -4842,12 +4905,12 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -4858,9 +4921,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -5001,9 +5064,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -5017,8 +5080,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5030,8 +5093,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5043,8 +5106,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5057,8 +5120,8 @@
     "700italic"
    ],
    "subsets": [
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5069,8 +5132,8 @@
     "italic"
    ],
    "subsets": [
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5136,7 +5199,20 @@
    ],
    "subsets": [
     "latin-ext",
-    "latin"
+    "latin",
+    "vietnamese"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Patrick Hand SC",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin",
+    "vietnamese"
    ]
   },
   {
@@ -5211,8 +5287,8 @@
     "700italic"
    ],
    "subsets": [
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5267,11 +5343,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -5298,8 +5374,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5315,8 +5391,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5338,8 +5414,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5432,9 +5508,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "greek"
    ]
   },
   {
@@ -5466,8 +5542,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -5790,12 +5866,12 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -5811,12 +5887,12 @@
    ],
    "subsets": [
     "latin-ext",
-    "vietnamese",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
    ]
   },
   {
@@ -5974,9 +6050,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -5987,8 +6063,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -6109,8 +6185,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -6153,8 +6229,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -6299,6 +6375,18 @@
     "italic",
     "900",
     "900italic"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Sintony",
+   "variants": [
+    "regular",
+    "700"
    ],
    "subsets": [
     "latin-ext",
@@ -6550,8 +6638,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -6693,6 +6781,17 @@
   },
   {
    "kind": "webfonts#webfont",
+   "family": "Tauri",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
    "family": "Telex",
    "variants": [
     "regular"
@@ -6709,9 +6808,9 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext"
    ]
   },
   {
@@ -6861,11 +6960,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -6876,11 +6975,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -6894,11 +6993,11 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic-ext",
     "greek-ext",
-    "greek",
+    "latin",
     "cyrillic",
-    "latin"
+    "cyrillic-ext",
+    "greek"
    ]
   },
   {
@@ -6929,8 +7028,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
@@ -7230,8 +7329,8 @@
    ],
    "subsets": [
     "latin-ext",
-    "cyrillic",
-    "latin"
+    "latin",
+    "cyrillic"
    ]
   },
   {
