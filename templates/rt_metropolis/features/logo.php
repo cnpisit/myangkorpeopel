@@ -56,7 +56,7 @@ class GantryFeaturelogo extends GantryFeature {
         ob_start();
         ?>
         <div class="rt-block logo-block">
-                <!--<a href="<?php echo $gantry->baseUrl; ?>" id="rt-logo"></a>-->
+                <a href="<?php echo $gantry->baseUrl; ?>" id="rt-logo"></a>
         </div>
         <?php
         return ob_get_clean();
