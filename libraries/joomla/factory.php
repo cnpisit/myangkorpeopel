@@ -231,6 +231,7 @@ abstract class JFactory
 		}
 
 		return $instance;
+//                return null;
 	}
 
 	/**

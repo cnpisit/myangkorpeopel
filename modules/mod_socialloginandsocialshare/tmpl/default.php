@@ -59,18 +59,38 @@ $loc = (isset($_SERVER['REQUEST_URI']) ? urlencode($http.$_SERVER["HTTP_HOST"].$
 	     $count = ($count == 0 ? $count : $count -1 );
 	   }?>
 	   <?php $user_picture = $session->get('user_picture');?>
-     <div style="float:left;"><a href="<?php echo 'index.php?option=com_socialloginandsocialshare&view=profile';?>" title="My Profile">
-<img src="<?php if (!empty($user_picture)) { echo JURI::root().'images'.DS.'sociallogin'.DS. $session->get('user_picture');} else {echo JURI::root().'media' . DS . 'com_socialloginandsocialshare' . DS .'images' . DS . 'noimage.png';}?>" alt="<?php echo $user->get('name');?>" style="width:50px; height:auto;background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; display: block; margin: 2px 4px 4px 0; padding: 2px;"></a>
+      <div style="float:right;">
+          <!--<a href="<?php // echo 'index.php?option=com_socialloginandsocialshare&view=profile';?>" title="My Profile" >-->
+         
+<img src="<?php if (!empty($user_picture)) { echo JURI::root().'images'.DS.'sociallogin'.DS. $session->get('user_picture');} else {echo JURI::root().'media' . DS . 'com_socialloginandsocialshare' . DS .'images' . DS . 'noimage.png';}?>" alt="<?php echo $user->get('name');?>" style="width:90px; height:110px; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; display: block; margin: 2px 4px 4px 0; padding: 2px;">
      </div>
      <div>
        <div class="login-greeting" >
 	   <div style=" font-weight:bold;">
+                 <?php 
+//                  var_dump($user) ;
+                     $pro = array();
+                     foreach ($user as $me)
+                     {
+                         $pro[] = $me;
+                     }
+//                     var_dump($pro);
+                     
+                      
+                       
+                     
+                 ?>
 	    <?php if($lr_settings['showname'] == 0) : {
+                     echo "<br/>";
 		      echo JText::sprintf('MOD_LOGINRADIUS_HINAME', $user->get('name'));
+                      echo $pro['1'].'<br/>',$pro['2'].'<br/>',$pro['3'];
 	        } else : {
-		      echo JText::sprintf('MOD_LOGINRADIUS_HINAME', $user->get('username'));
+		      echo JText::sprintf('MOD_LOGINRADIUS_HINAME', $user->get('username')).'<br/>';
+                      echo  $user->get('email');
+//                    echo $pro['1'].'<br/>',$pro['2'].'<br/>',$pro['3'];
 	        } endif; ?></div>
-			<?php echo JText::_('MOD_LOGINRADIUS_VALUE_MAP'); ?> <b><?php echo $count;?></b><br /> <?php echo JText::_('MOD_LOGINRADIUS_VALUE_MAPONE'); ?>
+			<?php echo JText::_('MOD_LOGINRADIUS_VALUE_MAP'); ?> <b><?php echo $count;?></b><br /> <?php echo JText::_('MOD_LOGINRADIUS_VALUE_MAPONE').'<br/>'; ?>
+                      <?php //  echo $pro['1'].'<br/>',$pro['2'].'<br/>',$pro['3']; ?>
        </div><br />
        <a href="<?php echo 'index.php?option=com_socialloginandsocialshare&view=profile';?>"><?php echo JText::_('MOD_LOGINRADIUS_VALUE_ACCOUNT'); ?></a>
 	   <div class="logout-button">

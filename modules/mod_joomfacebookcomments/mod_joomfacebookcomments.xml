@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade">
+  <name>MOD_JOOMFACEBOOKCOMMENTS</name>
+  <author>JoomGallery::Project Team</author>
+  <creationDate>2013/02/27</creationDate>
+  <copyright>This module is released under the GNU/GPL License.</copyright>
+  <authorEmail>team@joomgallery.net</authorEmail>
+  <authorUrl>www.joomgallery.net</authorUrl>
+  <version>1.0</version>
+  <description>MOD_JOOMFACEBOOKCOMMENTS_XML_DESCRIPTION</description>
+  <files>
+    <filename module="mod_joomfacebookcomments">mod_joomfacebookcomments.php</filename>
+    <filename>index.html</filename>
+  </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.mod_joomfacebookcomments.ini</language>
+    <language tag="en-GB">en-GB/en-GB.mod_joomfacebookcomments.sys.ini</language>
+    <language tag="de-DE">de-DE/de-DE.mod_joomfacebookcomments.ini</language>
+    <language tag="de-DE">de-DE/de-DE.mod_joomfacebookcomments.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="width" type="text" default="470" label="MOD_JOOMFACEBOOKCOMMENTS_FIELD_WIDTH_LABEL" description="MOD_JOOMFACEBOOKCOMMENTS_FIELD_WIDTH_DESC" />
+        <field name="num_posts" type="text" default="10" label="MOD_JOOMFACEBOOKCOMMENTS_FIELD_NUMPOSTS_LABEL" description="MOD_JOOMFACEBOOKCOMMENTS_FIELD_NUMPOSTS_DESC" />
+        <field name="colorscheme" type="radio" default="light" label="MOD_JOOMFACEBOOKCOMMENTS_FIELD_COLORSCHEME_LABEL" description="MOD_JOOMFACEBOOKCOMMENTS_FIELD_COLORSCHEME_DESC" class="btn-group">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </field>
+        <field name="load_sdk" type="radio" default="1" label="MOD_JOOMFACEBOOKCOMMENTS_FIELD_LOADSDK_LABEL" description="MOD_JOOMFACEBOOKCOMMENTS_FIELD_LOADSDK_DESC" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+  <updateservers>
+    <server type="collection" priority="1" name="JoomGallery Update Service">http://www.en.joomgallery.net/components/com_newversion/xml/extensions2.xml</server>
+  </updateservers>
+</extension>
