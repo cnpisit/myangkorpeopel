@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+	<name>FW Gallery - Images</name>
+	<author>Fastw3b</author>
+	<version>1.0</version>
+	<description>Definition for FW Gallery Images for Joomfish 1.5</description>
+	<reference>
+		<table name="fwg_files">
+			<field type="referenceid" name="id" translate="0">ID</field>
+			<field type="titletext" name="name" translate="1">Name</field>
+			<field type="htmltext" name="descr" translate="1">Description</field>
+		</table>
+	</reference>
+</joomfish>

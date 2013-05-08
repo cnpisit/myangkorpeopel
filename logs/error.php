@@ -44,3 +44,5 @@
 2013-04-30	10:22:42	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
 2013-05-02	04:15:16	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
 2013-05-06	05:52:45	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-07	05:01:05	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
+2013-05-08	01:09:53	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
