@@ -12,6 +12,8 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
+//require_once dirname(__FILE__).'/registration.php';
+//$user = UsersControllerRegistration::register();
 ?>
 <div class="registration<?php echo $this->pageclass_sfx?>">
 <?php if ($this->params->get('show_page_heading')) : ?>
@@ -45,8 +47,9 @@ JHtml::_('behavior.formvalidation');
 		</fieldset>
 	<?php endif;?>
 <?php endforeach;?>
+      
 		<div>
-			<button type="submit" class="validate"><?php echo JText::_('JREGISTER');?></button>
+			<button type="submit" class="validate btn btn-primary"><?php echo JText::_('JREGISTER');?></button>
 			<?php echo JText::_('COM_USERS_OR');?>
 			<a href="<?php echo JRoute::_('');?>" title="<?php echo JText::_('JCANCEL');?>"><?php echo JText::_('JCANCEL');?></a>
 			<input type="hidden" name="option" value="com_users" />

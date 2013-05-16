@@ -111,7 +111,7 @@ class UsersControllerRegistration extends UsersController
 
 		// Get the user data.
 		$requestData = JRequest::getVar('jform', array(), 'post', 'array');
-
+                //var_dump($requestData);
 		// Validate the posted data.
 		$form	= $model->getForm();
 		if (!$form) {
@@ -144,7 +144,7 @@ class UsersControllerRegistration extends UsersController
 
 		// Attempt to save the data.
 		$return	= $model->register($data);
-
+//                var_dump($return);  
 		// Check for errors.
 		if ($return === false) {
 			// Save the data in the session.
@@ -165,7 +165,7 @@ class UsersControllerRegistration extends UsersController
 			$this->setRedirect(JRoute::_('index.php?option=com_users&view=registration&layout=complete', false));
 		} elseif ($return === 'useractivate') {
 			$this->setMessage(JText::_('COM_USERS_REGISTRATION_COMPLETE_ACTIVATE'));
-			$this->setRedirect(JRoute::_('index.php?option=com_users&view=registration&layout=complete', false));
+			$this->setRedirect(JRoute::_('index.php', false));
 		} else {
 			$this->setMessage(JText::_('COM_USERS_REGISTRATION_SAVE_SUCCESS'));
 			$this->setRedirect(JRoute::_('index.php?option=com_users&view=login', false));

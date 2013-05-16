@@ -74,13 +74,18 @@
 			size="30"
 			validate="equals"
 		/>
-
-		<field
-			name="captcha"
-			type="captcha"
-			label="COM_USERS_CAPTCHA_LABEL"
-			description="COM_USERS_CAPTCHA_DESC"
-			validate="captcha"
-		/>
+                
+                <field
+                        name="Userlevel"
+                        type="radio"
+                        description="COM_USERS_REGISTER_CATEGORY_LABEL"
+                        default="4"
+                        required="true"
+                >
+                        <option value="3">Actor</option>
+                        <option value="4">Fan</option>
+                        <option value="5">Galerist</option>
+                </field>
+		
 	</fieldset>
 </form>

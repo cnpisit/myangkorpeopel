@@ -134,10 +134,10 @@ abstract class JPluginHelper
 			}
 			$loaded[$type] = $results;
 		}
-
+                    
 		return $loaded[$type];
 	}
-
+        
 	/**
 	 * Loads the plugin file.
 	 *

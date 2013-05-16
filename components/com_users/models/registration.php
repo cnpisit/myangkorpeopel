@@ -75,7 +75,7 @@ class UsersModelRegistration extends JModelForm
 			$data['fromname'] = $config->get('fromname');
 			$data['mailfrom'] = $config->get('mailfrom');
 			$data['sitename'] = $config->get('sitename');
-			$user->setParam('activate', 1);
+			$user->setParam('activate', 0);
 			$emailSubject	= JText::sprintf(
 				'COM_USERS_EMAIL_ACTIVATE_WITH_ADMIN_ACTIVATION_SUBJECT',
 				$data['name'],
@@ -299,6 +299,7 @@ class UsersModelRegistration extends JModelForm
 	 */
 	public function register($temp)
 	{
+         
 		$config = JFactory::getConfig();
 		$db		= $this->getDbo();
 		$params = JComponentHelper::getParams('com_users');
@@ -315,13 +316,14 @@ class UsersModelRegistration extends JModelForm
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
-		$useractivation = $params->get('useractivation');
-		$sendpassword = $params->get('sendpassword', 1);
+                $data['userlevel']      = $data['Userlevel'];
+		$useractivation         = $params->get('useractivation');
+		$sendpassword           = $params->get('sendpassword', 1);
 
 		// Check if the user needs to activate their account.
 		if (($useractivation == 1) || ($useractivation == 2)) {
 			$data['activation'] = JApplication::getHash(JUserHelper::genRandomPassword());
-			$data['block'] = 1;
+			$data['block'] = 0 ;
 		}
 
 		// Bind the data.
