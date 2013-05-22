@@ -111,7 +111,7 @@ class UsersControllerRegistration extends UsersController
 
 		// Get the user data.
 		$requestData = JRequest::getVar('jform', array(), 'post', 'array');
-                //var_dump($requestData);
+                
 		// Validate the posted data.
 		$form	= $model->getForm();
 		if (!$form) {
@@ -145,6 +145,7 @@ class UsersControllerRegistration extends UsersController
 		// Attempt to save the data.
 		$return	= $model->register($data);
 //                var_dump($return);  
+//                echo $return;
 		// Check for errors.
 		if ($return === false) {
 			// Save the data in the session.

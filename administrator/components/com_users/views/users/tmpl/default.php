@@ -71,7 +71,7 @@ $loggeduser = JFactory::getUser();
 				<th class="nowrap" width="5%">
 					<?php echo JHtml::_('grid.sort', 'COM_USERS_HEADING_ENABLED', 'a.block', $listDirn, $listOrder); ?>
 				</th>
-				<th class="nowrap" width="5%">
+                                <th class="nowrap" width="5%" style="background-color: red">
 					<?php echo JHtml::_('grid.sort', 'COM_USERS_HEADING_ACTIVATED', 'a.activation', $listDirn, $listOrder); ?>
 				</th>
 				<th class="nowrap" width="10%">

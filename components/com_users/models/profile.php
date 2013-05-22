@@ -255,8 +255,8 @@ class UsersModelProfile extends JModelForm
 		}
 
 		// Load the users plugin group.
-		JPluginHelper::importPlugin('user');
-
+		 $me = JPluginHelper::importPlugin('user');
+                 var_dump($me);
 		// Null the user groups so they don't get overwritten
 		$user->groups = null;
 

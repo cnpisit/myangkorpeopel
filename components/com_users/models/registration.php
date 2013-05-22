@@ -289,7 +289,20 @@ class UsersModelRegistration extends JModelForm
 		// Load the parameters.
 		$this->setState('params', $params);
 	}
-
+//
+//        public function assingUserlevel($userId)
+//        {
+//            $db = JFactory::getDBO();
+//            $sql = 'SELECT userlevel FROM #__users WHERE id='.$userId;
+//            $db->setQuery($sql);
+//            $userlevel = (array)$db->loadAssocList();
+//            foreach($userlevel as $data):
+//            $insert = 'INSERT INTO #_user_usergroup_map (`user_id`, `group_id`) VALUES ('.$data['id'].','.$data['userlevel'].')';
+//            $db->setQuery($insert);
+//            $db->query();
+//            endforeach;
+//            
+//        }
 	/**
 	 * Method to save the form data.
 	 *
@@ -303,7 +316,7 @@ class UsersModelRegistration extends JModelForm
 		$config = JFactory::getConfig();
 		$db		= $this->getDbo();
 		$params = JComponentHelper::getParams('com_users');
-
+                
 		// Initialise the table with JUser.
 		$user = new JUser;
 		$data = (array)$this->getData();
@@ -312,7 +325,7 @@ class UsersModelRegistration extends JModelForm
 		foreach ($temp as $k => $v) {
 			$data[$k] = $v;
 		}
-
+//                $this->assingUserlevel($data['Userlevel']);
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];

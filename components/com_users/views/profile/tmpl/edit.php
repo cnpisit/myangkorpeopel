@@ -20,6 +20,11 @@ $lang->load( 'plg_user_profile', JPATH_ADMINISTRATOR );
 <?php if ($this->params->get('show_page_heading')) : ?>
 	<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 <?php endif; ?>
+        <?php 
+//                 $me = JPluginHelper::importPlugin('user');
+//                 var_dump($me);
+//                 echo 'fuck';
+        ?>
 
 <form id="member-profile" action="<?php echo JRoute::_('index.php?option=com_users&task=profile.save'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 <?php foreach ($this->form->getFieldsets() as $group => $fieldset):// Iterate through the form fieldsets and display each one.?>
@@ -47,7 +52,6 @@ $lang->load( 'plg_user_profile', JPATH_ADMINISTRATOR );
 	</fieldset>
 	<?php endif;?>
 <?php endforeach;?>
-
 		<div>
 			<button type="submit" class="validate"><span><?php echo JText::_('JSUBMIT'); ?></span></button>
 			<?php echo JText::_('COM_USERS_OR'); ?>

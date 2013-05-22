@@ -70,7 +70,7 @@ class MonthController extends JController   {
 			$this->view->display();
 		} else {
 			$cache =& JFactory::getCache(JEV_COM_COMPONENT, 'view');
-			$cache->get($this->view, 'display');
+//			$cache->get($this->view, 'display');
 		}
 	}
 	

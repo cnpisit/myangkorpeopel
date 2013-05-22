@@ -14,6 +14,7 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 //require_once dirname(__FILE__).'/registration.php';
 //$user = UsersControllerRegistration::register();
+
 ?>
 <div class="registration<?php echo $this->pageclass_sfx?>">
 <?php if ($this->params->get('show_page_heading')) : ?>

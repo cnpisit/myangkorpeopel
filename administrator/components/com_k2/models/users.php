@@ -413,7 +413,7 @@ class K2ModelUsers extends K2Model
             if (count($group))
             {
                 foreach ($cid as $id)
-                {
+                {   
                     $query = "DELETE FROM #__user_usergroup_map WHERE user_id = ".$id;
                     $db->setQuery($query);
                     $db->query();
