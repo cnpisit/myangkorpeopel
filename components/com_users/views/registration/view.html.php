@@ -16,13 +16,14 @@ defined('_JEXEC') or die;
  * @since		1.6
  */
 class UsersViewRegistration extends JViewLegacy
-{
-	protected $data;
+{   
+    protected $test;
+    protected $data;
 	protected $form;
 	protected $params;
 	protected $state;
 
-	/**
+        /**
 	 * Method to display the view.
 	 *
 	 * @param	string	The template file to include
@@ -31,17 +32,26 @@ class UsersViewRegistration extends JViewLegacy
 	public function display($tpl = null)
 	{
 		// Get the view data.
+//               $this->test = $this->get('Test');
 		$this->data		= $this->get('Data');
 		$this->form		= $this->get('Form');
 		$this->state	= $this->get('State');
 		$this->params	= $this->state->get('params');
-
+                 
+                
+                var_dump($this->data);
+//                $me = array();
+//                foreach ($this->data as $p => $q)
+//                {
+//                    $me[$p] = $q;
+//                }
+//        var_dump($me['groups']['0']);
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {
 			JError::raiseError(500, implode('<br />', $errors));
 			return false;
 		}
-
+                
 		// Check for layout override
 		$active = JFactory::getApplication()->getMenu()->getActive();
 		if (isset($active->query['layout'])) {

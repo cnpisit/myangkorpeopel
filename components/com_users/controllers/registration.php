@@ -143,9 +143,10 @@ class UsersControllerRegistration extends UsersController
 		}
 
 		// Attempt to save the data.
+//                $model->getUserdata($data);
 		$return	= $model->register($data);
-//                var_dump($return);  
-//                echo $return;
+
+                
 		// Check for errors.
 		if ($return === false) {
 			// Save the data in the session.

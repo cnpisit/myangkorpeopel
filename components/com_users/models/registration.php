@@ -25,8 +25,13 @@ class UsersModelRegistration extends JModelForm
 	 * @since	1.6
 	 */
 	protected $data;
+        public $user;
 
-	/**
+//        public function getUserdata($me)
+//        {
+//            return $this->user= $me;
+//        }
+        /**
 	 * Method to activate a user account.
 	 *
 	 * @param	string		The activation token.
@@ -178,6 +183,7 @@ class UsersModelRegistration extends JModelForm
 	 */
 	public function getData()
 	{
+            $arr = array();
 		if ($this->data === null) {
 
 			$this->data	= new stdClass();
@@ -189,14 +195,19 @@ class UsersModelRegistration extends JModelForm
 			foreach ($temp as $k => $v) {
 				$this->data->$k = $v;
 			}
-
+                        foreach ($this->data as $name => $value):
+                            $arr[$name] = $value;
+                        endforeach;
+                        $this->user = $arr['Userlevel'];
 			// Get the groups the user should be added to after registration.
 			$this->data->groups = array();
 
 			// Get the default new user group, Registered if not specified.
 			$system	= $params->get('new_usertype', 2);
-
+                        $level= $params->get('Userlevel', $this->user );
+ 
 			$this->data->groups[] = $system;
+                        $this->data->groups[] = $level;
 
 			// Unset the passwords.
 			unset($this->data->password1);
@@ -303,7 +314,9 @@ class UsersModelRegistration extends JModelForm
 //            endforeach;
 //            
 //        }
-	/**
+    
+
+    /**
 	 * Method to save the form data.
 	 *
 	 * @param	array		The form data.
@@ -319,13 +332,14 @@ class UsersModelRegistration extends JModelForm
                 
 		// Initialise the table with JUser.
 		$user = new JUser;
+                
 		$data = (array)$this->getData();
 
 		// Merge in the registration data.
 		foreach ($temp as $k => $v) {
 			$data[$k] = $v;
 		}
-//                $this->assingUserlevel($data['Userlevel']);
+                $this->user = $data['Userlevel'];
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
@@ -348,7 +362,7 @@ class UsersModelRegistration extends JModelForm
 		// Load the users plugin group.
 		JPluginHelper::importPlugin('user');
 
-		// Store the data.
+		// Store the data.  
 		if (!$user->save()) {
 			$this->setError(JText::sprintf('COM_USERS_REGISTRATION_SAVE_FAILED', $user->getError()));
 			return false;
