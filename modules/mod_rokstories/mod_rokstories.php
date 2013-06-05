@@ -54,4 +54,5 @@ if (modRokStoriesHelper::checkRequest()) require(JModuleHelper::getLayoutPath('m
 	}
 
 	if ($params->get('layout_type') == 'layout3') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout3')); else if ($params->get('layout_type') == 'layout4') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout4')); else if ($params->get('layout_type') == 'layout5') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout5')); else if ($params->get('layout_type') == 'layout6') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout6')); else if ($params->get('layout_type') == 'layout7') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout7')); else if ($params->get('layout_type') == 'layout8') require(JModuleHelper::getLayoutPath('mod_rokstories', 'layout8')); else require(JModuleHelper::getLayoutPath('mod_rokstories'));
+echo 'good';
 }

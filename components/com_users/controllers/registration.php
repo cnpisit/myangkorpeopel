@@ -143,7 +143,6 @@ class UsersControllerRegistration extends UsersController
 		}
 
 		// Attempt to save the data.
-//                $model->getUserdata($data);
 		$return	= $model->register($data);
 
                 
@@ -172,8 +171,6 @@ class UsersControllerRegistration extends UsersController
 			$this->setMessage(JText::_('COM_USERS_REGISTRATION_SAVE_SUCCESS'));
 			$this->setRedirect(JRoute::_('index.php?option=com_users&view=login', false));
 		}
-
-
 		return true;
 	}
 }

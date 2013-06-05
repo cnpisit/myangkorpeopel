@@ -39,7 +39,7 @@ class UsersViewRegistration extends JViewLegacy
 		$this->params	= $this->state->get('params');
                  
                 
-                var_dump($this->data);
+//                var_dump($this->data);
 //                $me = array();
 //                foreach ($this->data as $p => $q)
 //                {

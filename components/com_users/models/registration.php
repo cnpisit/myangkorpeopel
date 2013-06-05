@@ -25,7 +25,7 @@ class UsersModelRegistration extends JModelForm
 	 * @since	1.6
 	 */
 	protected $data;
-        public $user;
+//        public $me = null;
 
 //        public function getUserdata($me)
 //        {
@@ -195,19 +195,27 @@ class UsersModelRegistration extends JModelForm
 			foreach ($temp as $k => $v) {
 				$this->data->$k = $v;
 			}
-                        foreach ($this->data as $name => $value):
-                            $arr[$name] = $value;
-                        endforeach;
-                        $this->user = $arr['Userlevel'];
+//                        
+//                          foreach ($this->data as $name => $value):
+//                                $arr[$name] = $value;
+//                            endforeach;
+////                            var_dump($arr);
+//                        if ($arr != null )
+//                        {
+//                            $this->me = $arr['Userlevel'];
+//                        }  else {
+//                            $this->me = 0;
+//                        }
+                          
 			// Get the groups the user should be added to after registration.
 			$this->data->groups = array();
 
 			// Get the default new user group, Registered if not specified.
 			$system	= $params->get('new_usertype', 2);
-                        $level= $params->get('Userlevel', $this->user );
+//                        $level= $params->get('Userlevel', $this->me );
  
 			$this->data->groups[] = $system;
-                        $this->data->groups[] = $level;
+//                        $this->data->groups[] = $level;
 
 			// Unset the passwords.
 			unset($this->data->password1);
@@ -336,21 +344,24 @@ class UsersModelRegistration extends JModelForm
 		$data = (array)$this->getData();
 
 		// Merge in the registration data.
-		foreach ($temp as $k => $v) {
-			$data[$k] = $v;
-		}
-                $this->user = $data['Userlevel'];
+//		foreach ($temp as $k => $v) {
+//			$data[$k] = $v;
+//		}
+//                $this->me = $data['Userlevel'];
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
                 $data['userlevel']      = $data['Userlevel'];
+                $data['groups'][]       = $data['Userlevel'];
+
 		$useractivation         = $params->get('useractivation');
 		$sendpassword           = $params->get('sendpassword', 1);
 
 		// Check if the user needs to activate their account.
 		if (($useractivation == 1) || ($useractivation == 2)) {
 			$data['activation'] = JApplication::getHash(JUserHelper::genRandomPassword());
-			$data['block'] = 0 ;
+//                        $data['activation'] = 0;
+			$data['block'] = 1 ;
 		}
 
 		// Bind the data.
@@ -375,7 +386,7 @@ class UsersModelRegistration extends JModelForm
 		$data['sitename']	= $config->get('sitename');
 		$data['siteurl']	= JUri::root();
 
-		// Handle account activation/confirmation emails.
+//		// Handle account activation/confirmation emails.
 		if ($useractivation == 2)
 		{
 			// Set the link to confirm the user email.
@@ -541,5 +552,5 @@ class UsersModelRegistration extends JModelForm
 			return "adminactivate";
 		else
 			return $user->id;
-	}
+	} 
 }

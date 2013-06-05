@@ -52,3 +52,29 @@
 2013-05-20	08:59:43	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
 2013-05-21	03:06:22	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
 2013-05-22	07:11:22	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	06:53:49	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	06:56:22	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	06:58:04	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	06:58:26	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	06:58:40	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	07:49:32	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	08:25:27	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
+2013-05-30	08:25:39	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	08:47:30	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-30	08:50:15	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	01:17:15	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:07:32	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:07:54	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:09:13	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:14:05	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:16:42	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:17:07	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:18:13	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:18:21	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:19:26	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:37:50	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:38:05	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-05-31	02:43:12	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-06-04	08:03:34	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-06-04	08:53:25	INFO	::1	Joomla CANCELED: 	
+2013-06-04	08:53:34	INFO	::1	Joomla CANCELED: 	
