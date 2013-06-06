@@ -93,5 +93,11 @@ class modSocialLoginAndSocialShareHelper
       }
       return $lr_settings;
     }
-	}
+    public function getSession()
+    {
+        $me = JFactory::getSession();
+        
+        return $session = $me->getId();
+    }
+}
 ?>

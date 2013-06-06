@@ -13,4 +13,7 @@ $type = modSocialLoginAndSocialShareHelper::getType();
 $lr_settings = modSocialLoginAndSocialShareHelper::sociallogin_getSettings();
 $return = modSocialLoginAndSocialShareHelper::getReturnURL($params, $type);
 $user = JFactory::getUser();
+$session = modSocialLoginAndSocialShareHelper::getSession();
+var_dump($session);
+
 require JModuleHelper::getLayoutPath('mod_socialloginandsocialshare', $params->get('layout', 'default'));

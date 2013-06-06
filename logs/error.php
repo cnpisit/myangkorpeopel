@@ -78,3 +78,5 @@
 2013-06-04	08:03:34	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
 2013-06-04	08:53:25	INFO	::1	Joomla CANCELED: 	
 2013-06-04	08:53:34	INFO	::1	Joomla CANCELED: 	
+2013-06-06	01:45:15	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
+2013-06-06	01:45:19	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
