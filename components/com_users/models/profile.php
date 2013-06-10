@@ -228,13 +228,16 @@ class UsersModelProfile extends JModelForm
 	 */
 	public function save($data)
 	{
+            $this->setTalent($data);
 		$userId = (!empty($data['id'])) ? $data['id'] : (int)$this->getState('user.id');
-
+                
 		$user = new JUser($userId);
-
+                
+                
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
+//                $data['talent']         = $data['Talent1'];
 
 		// Unset the username if it should not be overwritten
 		if (!JComponentHelper::getParams('com_users')->get('change_login_name'))
@@ -254,9 +257,8 @@ class UsersModelProfile extends JModelForm
 			return false;
 		}
 
-		// Load the users plugin group.
-		 $me = JPluginHelper::importPlugin('user');
-                 var_dump($me);
+		
+		 
 		// Null the user groups so they don't get overwritten
 		$user->groups = null;
 
@@ -268,4 +270,26 @@ class UsersModelProfile extends JModelForm
 
 		return $user->id;
 	}
+        
+        public function setTalent($data)
+        {
+            
+            $db = JFactory::getDbo();
+            $query = $db->getQuery(true);
+         
+            $columns = array('sur_id', 'tal_id');
+// 
+//            // Insert values.
+            $values = array( $data['id'], $data['Talent']);
+//            $values = array($db->quote('97'), $db->quote('5'));
+//           
+            $query->insert($db->quoteName('#__screenuser_talents'))
+                  ->columns($db->quoteName($columns))
+                  ->values(implode(',', $values));
+        
+
+//            $query = "insert into #_screenuser_talents('sur_id','tal_id') values ('97','5')";
+            $db->setQuery($query);
+            $db->query();
+        }
 }

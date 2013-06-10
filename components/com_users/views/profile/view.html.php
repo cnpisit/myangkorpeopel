@@ -28,6 +28,7 @@ class UsersViewProfile extends JViewLegacy
 	 * @param	string	$tpl	The template file to include
 	 * @since	1.6
 	 */
+       
 	public function display($tpl = null)
 	{
 		// Get the view data.
@@ -35,7 +36,14 @@ class UsersViewProfile extends JViewLegacy
 		$this->form		= $this->get('Form');
 		$this->state	= $this->get('State');
 		$this->params	= $this->state->get('params');
-
+                
+                $arr = array();
+                foreach ($this->data as $key => $val)
+                {
+                    $arr[$key] = $val;
+                }
+                var_dump($arr);
+                var_dump($arr['id']);
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {
 			JError::raiseError(500, implode('<br />', $errors));

@@ -70,5 +70,18 @@
 			size="30"
 			validate="equals"
 		/>
+                
+                    <field name="Talent" type="checkbox"
+			description="Chooes your talent"
+			filter="int"
+                        value="4"
+                    />
+                             
+                <field name="Talent1" type="checkbox"
+			description="Chooes your talent"
+			filter="int"
+                        value="2"       
+                />
+                
 	</fieldset>
 </form>

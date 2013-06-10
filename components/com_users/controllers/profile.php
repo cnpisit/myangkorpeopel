@@ -76,14 +76,14 @@ class UsersControllerProfile extends UsersController
 		$model	= $this->getModel('Profile', 'UsersModel');
 		$user	= JFactory::getUser();
 		$userId	= (int) $user->get('id');
-//                $usrLevel = (int) $user->get('userlevel');
+
 
 		// Get the user data.
 		$data = JRequest::getVar('jform', array(), 'post', 'array');
 
 		// Force the ID to this user.
 		$data['id'] = $userId;
-//                $data['userlevel'] = $userLevel;
+
 
 		// Validate the posted data.
 		$form = $model->getForm();
@@ -119,8 +119,9 @@ class UsersControllerProfile extends UsersController
 		}
 
 		// Attempt to save the data.
+//                $model->setTalent($data);
 		$return	= $model->save($data);
-
+//                return $return;
 		// Check for errors.
 		if ($return === false) {
 			// Save the data in the session.
