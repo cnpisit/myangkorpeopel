@@ -36,7 +36,8 @@ class UsersViewProfile extends JViewLegacy
 		$this->form		= $this->get('Form');
 		$this->state	= $this->get('State');
 		$this->params	= $this->state->get('params');
-                
+               
+                //this just var_dump to view data
                 $arr = array();
                 foreach ($this->data as $key => $val)
                 {
@@ -44,6 +45,7 @@ class UsersViewProfile extends JViewLegacy
                 }
                 var_dump($arr);
                 var_dump($arr['id']);
+               
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {
 			JError::raiseError(500, implode('<br />', $errors));

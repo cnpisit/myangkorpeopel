@@ -71,16 +71,31 @@
 			validate="equals"
 		/>
                 
-                    <field name="Talent" type="checkbox"
-			description="Chooes your talent"
+                    <field name="Sing" type="checkbox"
+			description="Chooes if you good at singing"
 			filter="int"
-                        value="4"
+                        value="1"
                     />
                              
-                <field name="Talent1" type="checkbox"
-			description="Chooes your talent"
+                <field name="Dance" type="checkbox"
+			description="Chooes if you good at dancing"
 			filter="int"
                         value="2"       
+                />
+                <field name="Music" type="checkbox"
+			description="Chooes if you good at playing music"
+			filter="int"
+                        value="3"       
+                />
+                <field name="Filme" type="checkbox"
+			description="Chooes if you good at fime"
+			filter="int"
+                        value="4"       
+                />
+                <field name="Model" type="checkbox"
+			description="Chooes if you good at showing appearance"
+			filter="int"
+                        value="5"       
                 />
                 
 	</fieldset>

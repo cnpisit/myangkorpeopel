@@ -273,23 +273,14 @@ class UsersModelProfile extends JModelForm
         
         public function setTalent($data)
         {
-            
             $db = JFactory::getDbo();
-            $query = $db->getQuery(true);
-         
-            $columns = array('sur_id', 'tal_id');
-// 
-//            // Insert values.
-            $values = array( $data['id'], $data['Talent']);
-//            $values = array($db->quote('97'), $db->quote('5'));
-//           
-            $query->insert($db->quoteName('#__screenuser_talents'))
-                  ->columns($db->quoteName($columns))
-                  ->values(implode(',', $values));
-        
-
-//            $query = "insert into #_screenuser_talents('sur_id','tal_id') values ('97','5')";
-            $db->setQuery($query);
-            $db->query();
+           $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Sing']."'),
+                                                                                    ('".$data['id']."','".$data['Dance']."'),
+                                                                                    ('".$data['id']."','".$data['Music']."'),
+                                                                                    ('".$data['id']."','".$data['Filme']."'),
+                                                                                    ('".$data['id']."','".$data['Model']."')";
+                $db->setQuery($query);
+                $db->query();
+            
         }
 }

@@ -1,3 +1,15 @@
+<style>
+    dt span.optional
+    {
+        display:none;
+    }
+    dt
+    {
+        display: inline;
+    }
+    
+</style>
+
 <?php
 /**
  * @package		Joomla.Site
