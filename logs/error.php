@@ -80,3 +80,4 @@
 2013-06-04	08:53:34	INFO	::1	Joomla CANCELED: 	
 2013-06-06	01:45:15	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
 2013-06-06	01:45:19	INFO	::1	GMail FAILURE: 	Failed to authenticate: User is blacklisted
+2013-06-17	01:09:09	INFO	::1	Joomla CANCELED: 	

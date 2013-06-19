@@ -21,8 +21,10 @@ class UsersViewProfile extends JViewLegacy
 	protected $form;
 	protected $params;
 	protected $state;
+        public $pisit;
+        public $fuck;
 
-	/**
+        /**
 	 * Method to display the view.
 	 *
 	 * @param	string	$tpl	The template file to include
@@ -32,19 +34,39 @@ class UsersViewProfile extends JViewLegacy
 	public function display($tpl = null)
 	{
 		// Get the view data.
+            $array = array();
 		$this->data		= $this->get('Data');
 		$this->form		= $this->get('Form');
 		$this->state	= $this->get('State');
 		$this->params	= $this->state->get('params');
-               
-                //this just var_dump to view data
-                $arr = array();
-                foreach ($this->data as $key => $val)
-                {
-                    $arr[$key] = $val;
-                }
-                var_dump($arr);
-                var_dump($arr['id']);
+               $model = $this->getModel();
+               $this->pisit = $model->showData($this->data);
+               $me = $this->pisit;
+               var_dump($me[0]);
+               foreach ($me[0] as $key => $val)
+               {
+                   $array[$key] = $val;
+               }
+               var_dump(unserialize($array['talents']));
+//               $this->fuck = $model->setTalent($this->data);
+//               var_dump($this->fuck);
+//               $test = $this->fuck;
+//               if($)
+        
+//                if(isset($array[0])) echo $array['0'];
+//                if(isset($array[1])) echo $array['1'];
+//                if(isset($array[2])) echo $array['2'];
+//                if(isset($array[3])) echo $array['3'];
+//                if(isset($array[4])) echo $array['4'];
+//                var_dump($array);
+                
+//                //this just var_dump to view data
+//                foreach ($this->data as $key => $val)
+//                {
+//                    $arr[$key] = $val;
+//                }
+
+//                var_dump($arr['id']);
                
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {

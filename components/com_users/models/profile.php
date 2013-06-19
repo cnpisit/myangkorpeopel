@@ -228,16 +228,22 @@ class UsersModelProfile extends JModelForm
 	 */
 	public function save($data)
 	{
-            $this->setTalent($data);
+//            $this->setTalent($data);
 		$userId = (!empty($data['id'])) ? $data['id'] : (int)$this->getState('user.id');
                 
 		$user = new JUser($userId);
                 
-                
+                 $array = array();
+                 $array[] = $data['sing'];
+                 $array[] = $data['dance'];
+                 $array[] = $data['music'];
+                 $array[] = $data['filme'];
+                 $array[] = $data['model'];
+                 
 		// Prepare the data for the user object.
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
-//                $data['talent']         = $data['Talent1'];
+                $data['talents']         = serialize($array);
 
 		// Unset the username if it should not be overwritten
 		if (!JComponentHelper::getParams('com_users')->get('change_login_name'))
@@ -271,16 +277,133 @@ class UsersModelProfile extends JModelForm
 		return $user->id;
 	}
         
-        public function setTalent($data)
+        public function showData($data)
         {
-            $db = JFactory::getDbo();
-           $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Sing']."'),
-                                                                                    ('".$data['id']."','".$data['Dance']."'),
-                                                                                    ('".$data['id']."','".$data['Music']."'),
-                                                                                    ('".$data['id']."','".$data['Filme']."'),
-                                                                                    ('".$data['id']."','".$data['Model']."')";
-                $db->setQuery($query);
-                $db->query();
+            $array = array();
+            foreach ($data as $key => $value)
+            {
+                $array[$key]=$value;
+            }
+            $db =  JFactory::getDbo();
+            $query = "select * from `tbl_users` where id=".$array['id'];
+            $db->setQuery($query);
+            $returns = $db->loadObjectList();
             
+            $array = array();
+            foreach ($returns as $return)
+            {
+                $array[] = $return;
+            }
+            return $array;
         }
+
+//        public function selectTalent()
+//        {
+//            $array = array();
+//            $user	= JFactory::getUser();
+//            $userId	= (int) $user->get('id');
+//            
+//            $db = JFactory::getDbo();
+//            
+//            $query = "select `tal_id` from `tblz_screenuser_talents` where sur_id=".$userId;
+//            $db->setQuery($query);
+//            $me = $db->loadObjectList();
+//            $arr1 = array();
+//            $arr2 = array();
+//            
+//                for($i=0; $i<count($me);$i++){
+//                    foreach($me[$i] as $key=>$val):
+//                        $arr1[$key] = $val;
+//                    endforeach;
+//                }
+//        return $me;
+//        }
+
+//        public function setTalent($data)
+//        {
+////            return $data;
+//             $array = array();
+//            $db = JFactory::getDbo();
+//            $selectTalent = $this->selectTalent();
+            
+//            for($i=0; $i<count($selectTalent); $i++)
+//            {
+//                foreach ($selectTalent[$i] as $key => $val)
+//                {
+//                    $array[$key] = $val;
+//                    if ($data['Sing']!=$array['tal_id'])
+//                    {
+//                        $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Sing']."')";    
+//                    }elseif (!($data['Dance']==$array['tal_id'])) {
+//                        $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Dance']."')";    
+//                    }elseif (!($data['Music']==$array['tal_id'])) {
+//                        $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Music']."')";    
+//                    }elseif (!($data['Filme']==$array['Filme'])) {
+//                        $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Dance']."')";    
+//                    }elseif (!($data['Model']==$array['tal_id'])) {
+//                        $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Model']."')";    
+//                    }
+//                    $db->setQuery($query);
+//                    $db->query();
+//                }
+//            }
+            
+            
+//           for($i=0; $i<count($selectTalent); $i++)
+//            {
+//                $array = array();
+//            $user	= JFactory::getUser();
+//            $userId	= (int) $user->get('id');
+//            
+//            $db = JFactory::getDbo();
+//            
+//            $query = "select `tal_id` from `tblz_screenuser_talents` where sur_id=".$userId;
+//            $db->setQuery($query);
+//            $me = $db->loadAssocList();
+//            $arr1 = array();
+//            $arr2 = array();
+//            foreach($me as $key2 => $val2):
+//                $arr2[$key2] =$val2;
+//            endforeach;
+//            return $arr2['0']['tal_id'];
+//            for($i = 0; $i <count($arr2);$i++){
+//            foreach($arr2[$i] as $key=>$val):
+//                    $arr1[$key] = $val;
+//                    if($arr1[$key] == 1){
+//                        return "hi1";
+//                    }
+//                    if($arr1[$key] == 2){
+//                        return "hi2";
+//                    }
+//                    if($arr1[$key] == 3){
+//                        return "hi3";
+//                    }
+//                    if($arr1[$key] == 4){
+//                        return "hi4";
+//                    }
+//                    if ($arr1[$key] == 5){
+//                        return "hi5";
+//                    }
+//                    
+//                endforeach;
+//            }
+//            return $data;
+//                foreach ($selectTalent[$i] as $key)
+//                {
+////                    $array[] = $key;
+//                    return $key;
+//                }
+//            }
+            
+            
+//            
+//           $query="insert into `tblz_screenuser_talents` (`sur_id`,`tal_id`) values ('".$data['id']."','".$data['Sing']."'),
+//                                                                                    ('".$data['id']."','".$data['Dance']."'),
+//                                                                                    ('".$data['id']."','".$data['Music']."'),
+//                                                                                    ('".$data['id']."','".$data['Filme']."'),
+//                                                                                    ('".$data['id']."','".$data['Model']."')";
+//                $db->setQuery($query);
+//                $db->query();
+            
+//        }
 }

@@ -32,14 +32,14 @@ if ($this->list) {
 <?php
 	if ($this->params->get('display_gallery_sorting')) {
 ?>
-			<div class="fwgs-header-ordering">
+<!--			<div class="fwgs-header-ordering">
 				<?php echo JText :: _('FWG_ORDER_BY'); ?>: <?php echo JHTML :: _('select.genericlist', array(
 					JHTML :: _('select.option', 'name', JText :: _('FWG_ALPHABETICALLY'), 'id', 'name'),
 					JHTML :: _('select.option', 'new', JText :: _('FWG_NEWEST_FIRST'), 'id', 'name'),
 					JHTML :: _('select.option', 'old', JText :: _('FWG_OLDEST_FIRST'), 'id', 'name'),
 					JHTML :: _('select.option', 'order', JText :: _('FWG_ORDERING'), 'id', 'name')
 				), 'order', 'onchange="this.form.submit();"', 'id', 'name', $this->order); ?>
-			</div>
+			</div>-->
 <?php
 	}
     if ($this->params->get('display_total_galleries')) {
