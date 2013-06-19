@@ -1,3 +1,10 @@
+<!--<title>SWFUpload Demos - Simple Demo</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../swfupload/swfupload.js"></script>
+<script type="text/javascript" src="../js/swfupload.queue.js"></script>
+<script type="text/javascript" src="js/fileprogress.js"></script>
+<script type="text/javascript" src="js/handlers.js"></script>
+<script type="text/javascript"></script>-->
 <?php
 /**
  * FW Gallery 2.2.0
@@ -9,6 +16,86 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 JHTML :: _('behavior.framework', true);
 JHTML :: script('components/com_fwgallery/assets/js/cerabox.min.js');
+//JHTML :: script('components/com_fwgallery/swfupload/swfupload.js');
+//JHTML :: script('components/com_fwgallery/swfupload/swfupload/swfupload.queue.js');
+//JHTML :: script('components/com_fwgallery/swfupload/fileprogress.js');
+//JHTML :: script('components/com_fwgallery/swfupload/handlers.js');
+//JHTML :: script('components/com_fwgallery/swfupload/default.css');
+
+
+$document =& JFactory::getDocument();
+$document->addScript($host.'components/com_fwgallery/swfupload/swfupload.js');
+$document->addScript($host.'components/com_fwgallery/swfupload/swfupload.queue.js');
+$document->addScript($host.'components/com_fwgallery/swfupload/fileprogress.js');
+$document->addScript($host.'components/com_fwgallery/swfupload/handlers.js');
+$document->addStyleSheet($host.'components/com_fwgallery/swfupload/default.css');
+
+$session = & JFactory::getSession();
+ 
+$swfUploadHeadJs ='
+var swfu;
+ 
+window.onload = function()
+{
+ 
+var settings = 
+{
+        //this is the path to the flash file, you need to put your components name into it
+        flash_url : "'.$host.'../components/com_fwgallery/swfupload/swfupload.swf",
+ 
+        //we can not put any vars into the url for complicated reasons, but we can put them into the post...
+        upload_url: "index.php",
+        post_params: 
+        {
+                "option" : "com_fwgallery",
+                "controller" : "mycontroller",
+                "task" : "upload.php",
+                "id" : "'.$myItemObject->id.'",
+                "'.$session->getName().'" : "'.$session->getId().'",
+                "format" : "raw"
+        }, 
+        //you need to put the session and the "format raw" in there, the other ones are what you would normally put in the url
+        file_size_limit : "200 MB",
+        //client side file chacking is for usability only, you need to check server side for security
+        file_types : "*.jpg;*.jpeg;*.gif;*.png;*.mp3;*.mp4;*.flv;",
+        file_types_description : "All Files",
+        file_upload_limit : 100,
+        file_queue_limit : 100,
+        custom_settings : 
+        {
+                progressTarget : "fsUploadProgress",
+                cancelButtonId : "btnCancel"
+        },
+        debug: false,
+ 
+        // Button settings
+        button_image_url: "'.$host.'../components/com_fwgallery/swfupload/XPButtonUploadText_61x22.png",
+        button_width: "90",
+        button_height: "29",
+        button_placeholder_id: "spanButtonPlaceHolder",
+        button_text: \'<span class="theFont"></span>\',
+        button_text_style: ".theFont { font-size: 13; }",
+        button_text_left_padding: 5,
+        button_text_top_padding: 5,
+ 
+        // The event handler functions are defined in handlers.js
+        file_queued_handler : fileQueued,
+        file_queue_error_handler : fileQueueError,
+        file_dialog_complete_handler : fileDialogComplete,
+        upload_start_handler : uploadStart,
+        upload_progress_handler : uploadProgress,
+        upload_error_handler : uploadError,
+        upload_success_handler : uploadSuccess,
+        upload_complete_handler : uploadComplete,
+        queue_complete_handler : queueComplete  // Queue plugin event
+};
+swfu = new SWFUpload(settings);
+};
+ 
+';
+ 
+//add the javascript to the head of the html document
+$document->addScriptDeclaration($swfUploadHeadJs);
 ?>
 <div class="componentheading"><?php echo $this->title; ?></div>
 <div id="fwgallery" class="fw-galleries">
@@ -146,3 +233,19 @@ if (!$this->params->get('hide_fw_copyright')) {
 <?php
 }
 ?>
+<div id="swfuploader">
+        <form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+        <fieldset class="adminform">
+ 
+                        <div class="fieldset flash" id="fsUploadProgress">
+                            <span class="legend" style="border: 2px; color: black">Upload your art here</span>
+                        </div>
+                <div id="divStatus">0 Files Uploaded</div>
+                        <div>
+                            <span id="spanButtonPlaceHolder" >upload</span>
+                                <input id="btnCancel" type="button" value="Cancel" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
+ 
+                        </div>
+        </fieldset>
+        </form>
+</div>
