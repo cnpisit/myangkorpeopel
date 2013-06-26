@@ -224,8 +224,8 @@ if (!$this->params->get('hide_fw_copyright')) {
 }
 ?>
 
-<div id="swfuploader">
-        <form id="form1" action="<?php echo JRoute::_('index.php?option=com_fwgallery&view=galleryUpload');?>" method="post" enctype="multipart/form-data">
+<!--<div id="swfuploader">
+        <form id="form1" action="<?php echo JRoute::_('index.php?option=com_fwgallery&task=galleries.upload');?>" method="post" enctype="multipart/form-data">
         <fieldset class="adminform">
                         <div class="fieldset flash" id="fsUploadProgress">
                             <span class="legend" style="border: 2px; color: blue">Upload your art here</span>
@@ -237,4 +237,4 @@ if (!$this->params->get('hide_fw_copyright')) {
                 <div><input type="submit" value="submit" class="btn"></div>
         </fieldset>
         </form>
-</div>
+</div>-->

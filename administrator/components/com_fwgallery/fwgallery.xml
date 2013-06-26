@@ -154,7 +154,7 @@
     </files>
 	<languages folder="site/language">
         <language tag="de-DE">de-DE/de-DE.com_fwgallery.ini</language>
-        <language tag="el-GR">el-GR/el-GR.com_fwgallery.ini</language>
+        <language tag="el-GR">el-GR/el-GR.com_fwgallery.ini</language> 
         <language tag="en-GB">en-GB/en-GB.com_fwgallery.ini</language>
         <language tag="es-ES">es-ES/es-ES.com_fwgallery.ini</language>
         <language tag="fr-FR">fr-FR/fr-FR.com_fwgallery.ini</language>
