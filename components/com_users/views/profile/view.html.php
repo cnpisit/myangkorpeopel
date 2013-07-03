@@ -39,15 +39,24 @@ class UsersViewProfile extends JViewLegacy
 		$this->form		= $this->get('Form');
 		$this->state	= $this->get('State');
 		$this->params	= $this->state->get('params');
+                
                $model = $this->getModel();
-               $this->pisit = $model->showData($this->data);
-               $me = $this->pisit;
-               var_dump($me[0]);
-               foreach ($me[0] as $key => $val)
-               {
-                   $array[$key] = $val;
-               }
-               var_dump(unserialize($array['talents']));
+               $me = $model->insertIntoTalent();
+//               var_dump($me);
+//                echo $me;
+               
+//               $this->pisit = $model->showData($this->data);
+//               $me = $this->pisit;
+//               var_dump($me[0]);
+//               foreach ($me[0] as $key => $val)
+//               {
+//                   $array[$key] = $val;
+//               }
+//               
+//               var_dump($this->data[]);
+               
+//               $tal = array( 'tal' => $model->insertIntoTalent($array['talents'])) ;
+//               var_dump($model->insertIntoTalent($array['talents']));
 //               $this->fuck = $model->setTalent($this->data);
 //               var_dump($this->fuck);
 //               $test = $this->fuck;

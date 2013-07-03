@@ -83,3 +83,4 @@
 2013-06-17	01:09:09	INFO	::1	Joomla CANCELED: 	
 2013-06-26	02:23:17	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
 2013-06-26	08:11:41	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied
+2013-07-02	07:02:39	INFO	::1	GMail FAILURE: 	Failed to authenticate: Result Unknown. Access Denied

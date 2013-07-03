@@ -121,8 +121,7 @@ class UsersControllerProfile extends UsersController
 		// Attempt to save the data.
 //                $model->setTalent($data);
 		$return	= $model->save($data);
-//                return $return;
-		// Check for errors.
+//                $me = $model->insertIntoTable();
 		if ($return === false) {
 			// Save the data in the session.
 			$app->setUserState('com_users.edit.profile.data', $data);

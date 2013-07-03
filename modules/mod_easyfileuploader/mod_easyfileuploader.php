@@ -40,10 +40,14 @@ if (isset($_FILES[$params->get('efu_variable')]))
         $me = modEasyFileUploaderHelper::uploadToTable($_FILES[$params->get('efu_variable')]);
 //        var_dump($_FILES[$params->get('efu_variable')]);
         $post = modEasyFileUploaderHelper::getPost();
-         
+//        $path = modEasyFileUploaderHelper::getPath();
+//         $sql = modEasyFileUploaderHelper::insertIntoTable();
+//         echo $sql;
         
 }
- var_dump($me);  
+//var_dump($me);
+//var_dump($post);
+//var_dump($result);
 
 //echo $me;
 require(JModuleHelper::getLayoutPath('mod_easyfileuploader', $params->get('layout', 'default')));

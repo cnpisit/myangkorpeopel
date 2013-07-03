@@ -41,7 +41,7 @@ class modEasyFileUploaderHelper
 	{
 		$result = "";
 		$path = JPATH_SITE.DIRECTORY_SEPARATOR.$params->get('efu_parent').DIRECTORY_SEPARATOR.$params->get('efu_folder');
-		
+//		var_dump($path);
 		if ($params->get('efu_user') == true)
 		{
 			//get the user data
@@ -103,8 +103,11 @@ class modEasyFileUploaderHelper
 								}
 							}
 							else
-							{
-								modEasyFileUploaderHelper::storeUploadedFile($path, $params, $result, $i);
+							{   
+                                                            $fileName = $_FILES[$params->get('efu_variable')]["name"][$i];
+                                                             modEasyFileUploaderHelper::insertIntoTable($fileName, $path);
+                                                             modEasyFileUploaderHelper::storeUploadedFile($path, $params, $result, $i);
+                                                                                                                              
 							}
 						}
 						else
@@ -127,11 +130,25 @@ class modEasyFileUploaderHelper
 				}
 			}
 		}
-		
+//		var_dump($_FILES[$params->get('efu_variable')]["name"][$i]);
 		return $result;
 	}
-	
-	private static function isValidFileType(&$params, &$i)
+        
+        public static function insertIntoTable($fileName, $path)
+        {
+            $post = JRequest::get('post');
+            $db = JFactory::getDbo();
+            $user	= JFactory::getUser();
+            $userId	= (int) $user->get('id');
+
+            $query = "INSERT INTO `tblz_arts`(`art_name`, `art_desc`, `art_refid`, `art_quote`, `art_lasttransaction`, `art_dimh`, `art_diml1`, `art_diml2`,`sur_id`, `tal_id`) 
+                      VALUES ('".$fileName."','".$post['description']."','refid','a','','','','','".$userId."','".$post['art_tal']."')";
+            
+            $db->setQuery($query);
+            $db->query();
+        }
+
+        private static function isValidFileType(&$params, &$i)
 	{
 		$valid = false;
 		

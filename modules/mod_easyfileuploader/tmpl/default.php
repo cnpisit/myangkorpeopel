@@ -36,7 +36,7 @@ $action = JURI::current();
            
            $talents =unserialize($user->talents);
             
-           
+//           var_dump($talents);
            
            
 
@@ -60,7 +60,7 @@ $action = JURI::current();
                     <input type="text" name="description" placeholder="Description">
                 </div>
                 <?php
-                echo "<div> Talent : <select name='art_tal'>";
+                echo "<div><label> Talent :</lable> <select name='art_tal'>";
                     for($i=0; $i<count($talents); $i++)
                     {
                         $j = $i+1;
@@ -69,10 +69,11 @@ $action = JURI::current();
                         $tal_name = $db->loadObjectList();
                         foreach ($tal_name['0'] as $key => $value) {
                             $tal = array ($key => $value);
-                            var_dump();
+                            if(isset($tal['tal_name']))
+                            {
+                                echo '<option value="'.$j.'">'.$tal['tal_name'].'</option>';
+                            }
                         }
-                        echo '<option value="'.$j.'">'.$tal['tal_name'].'</option>';
-
                     }
                  echo "</select></div>" ;
                 ?>

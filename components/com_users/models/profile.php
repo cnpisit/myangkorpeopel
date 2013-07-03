@@ -244,7 +244,8 @@ class UsersModelProfile extends JModelForm
 		$data['email']		= $data['email1'];
 		$data['password']	= $data['password1'];
                 $data['talents']         = serialize($array);
-
+//                $this->insertIntoTalent($data);
+               
 		// Unset the username if it should not be overwritten
 		if (!JComponentHelper::getParams('com_users')->get('change_login_name'))
 		{
@@ -273,10 +274,47 @@ class UsersModelProfile extends JModelForm
 			$this->setError($user->getError());
 			return false;
 		}
-
+//                $this->insertIntoTalent();
 		return $user->id;
 	}
         
+         public function insertIntoTalent()
+        {
+            $arr = array();
+            foreach ($this->data as $k => $v)
+            {
+                $arr[$k] = $v;
+            }
+            $talents = unserialize($arr['talents']);
+            $arr['id'];
+            
+            $db = JFactory::getDbo();
+            if(!empty($talents))
+            {
+                foreach ($talents as $tal)
+                {
+    //               return !isset($tal);
+                    if(isset($tal))
+                    {
+                       $query = 'SELECT * FROM `tblz_screenuser_talents` WHERE sur_id ='.$arr['id'].' and tal_id ='.$tal;
+                        $db->setQuery($query);
+                        $result = $db->loadObjectList();
+                        if (empty($result))
+                        {
+                            $sql ='INSERT INTO `tblz_screenuser_talents`(`sur_id`, `tal_id`) VALUES ('.$arr['id'].','.$tal.')';        
+                            $db->setQuery($sql);
+                            $db->query();
+                        }  else {
+                            $sql = 'UPDATE `tblz_screenuser_talents` SET `sur_id`='.$arr['id'].',`tal_id`='.$tal;
+                            $db->setQuery($sql);
+                            $db->query();
+                        } 
+                    }
+                }
+            }
+            
+        }
+
         public function showData($data)
         {
             $array = array();
@@ -296,6 +334,7 @@ class UsersModelProfile extends JModelForm
             }
             return $array;
         }
+       
 
 //        public function selectTalent()
 //        {
