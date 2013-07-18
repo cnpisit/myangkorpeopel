@@ -13,28 +13,9 @@
  */
 class modHelloWorldHelper
 {  
-     
-    
     function getHello( )
     {
         return 'Hello, Word !';
-    }
-    function showResult()
-    {
-        $name = isset($_POST['name'])?$_POST['name']:"";
-        $pwd  = isset($_POST['passwd'])?$_POST['passwd']:"";
-        if ($name!=NULL && $pwd!=NULL)
-        {
-            echo $name."<br/>";
-            echo $pwd."<br/>";
-        }
-        else
-        {
-            echo 'data could not be empty';
-        }
-//        
-    }
-    
-    
+    } 
 }
 ?>

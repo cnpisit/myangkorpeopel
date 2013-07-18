@@ -37,6 +37,7 @@ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'helper.php');
 if (isset($_FILES[$params->get('efu_variable')]))
 {
 	$result = modEasyFileUploaderHelper::getFileToUpload($params);
+//        var_dump($params);
         $me = modEasyFileUploaderHelper::uploadToTable($_FILES[$params->get('efu_variable')]);
 //        var_dump($_FILES[$params->get('efu_variable')]);
         $post = modEasyFileUploaderHelper::getPost();

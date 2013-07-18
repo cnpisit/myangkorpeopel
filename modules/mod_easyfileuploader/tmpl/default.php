@@ -34,16 +34,15 @@ $action = JURI::current();
            $user	= JFactory::getUser();
            $me	= (int) $user->get('id');
            
-           $talents =unserialize($user->talents);
-            
-//           var_dump($talents);
-           
-           
-
+           if (isset($user->talents))
+           {
+              $talents = unserialize($user->talents); 
+           }        
 ?>
-<div class="<?php echo $moduleclass_sfx;?>">
+
+<div class="<?php echo $moduleclass_sfx;?>" >
 	<!-- Input form for the File Upload -->
-	<form enctype="multipart/form-data" action="<?php echo $action; ?>" method="post">
+        <form enctype="multipart/form-data" action="<?php echo $action; ?>" method="post">
 		<?php if ($params->get('efu_multiple') == "1"): ?>
 		<label for=<?php echo '"'.$params->get('efu_variable').'[]"'; ?>><?php echo $labelText; ?></label>
 		<?php else: ?>
@@ -60,11 +59,13 @@ $action = JURI::current();
                     <input type="text" name="description" placeholder="Description">
                 </div>
                 <?php
-                echo "<div><label> Talent :</lable> <select name='art_tal'>";
+               
+                    echo "<div><label> Talent :</lable><br/> <select name='art_tal'>";
+                
                     for($i=0; $i<count($talents); $i++)
                     {
                         $j = $i+1;
-                       $sql = "SELECT `tal_name` FROM `tblz_talents` WHERE tal_id =".$j;
+                        $sql = "SELECT `tal_name` FROM `tblz_talents` WHERE tal_id =".$j;
                         $db->setQuery($sql);
                         $tal_name = $db->loadObjectList();
                         foreach ($tal_name['0'] as $key => $value) {
@@ -72,10 +73,14 @@ $action = JURI::current();
                             if(isset($tal['tal_name']))
                             {
                                 echo '<option value="'.$j.'">'.$tal['tal_name'].'</option>';
+                            }  else {
+                                echo '<option >Null</option>';
                             }
                         }
                     }
                  echo "</select></div>" ;
+               
+                
                 ?>
                 
 		<?php if ($params->get('efu_replace') == true): /* 1 means 'Yes' or true. 0 means 'No' or false. */ ?>

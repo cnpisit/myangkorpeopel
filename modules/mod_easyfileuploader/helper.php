@@ -105,9 +105,10 @@ class modEasyFileUploaderHelper
 							else
 							{   
                                                             $fileName = $_FILES[$params->get('efu_variable')]["name"][$i];
-                                                             modEasyFileUploaderHelper::insertIntoTable($fileName, $path);
+                                                            $fileType = $_FILES["fileToUpload"]["type"][$i];
+                                                             modEasyFileUploaderHelper::insertIntoTable($fileName, $path, $fileType);
                                                              modEasyFileUploaderHelper::storeUploadedFile($path, $params, $result, $i);
-                                                                                                                              
+                                                             var_dump($fileType); 
 							}
 						}
 						else
@@ -134,15 +135,15 @@ class modEasyFileUploaderHelper
 		return $result;
 	}
         
-        public static function insertIntoTable($fileName, $path)
+        public static function insertIntoTable($fileName, $path, $fileType)
         {
             $post = JRequest::get('post');
             $db = JFactory::getDbo();
             $user	= JFactory::getUser();
             $userId	= (int) $user->get('id');
 
-            $query = "INSERT INTO `tblz_arts`(`art_name`, `art_desc`, `art_refid`, `art_quote`, `art_lasttransaction`, `art_dimh`, `art_diml1`, `art_diml2`,`sur_id`, `tal_id`) 
-                      VALUES ('".$fileName."','".$post['description']."','refid','a','','','','','".$userId."','".$post['art_tal']."')";
+            $query = "INSERT INTO `tblz_arts`(`art_name`, `art_desc`, `art_refid`, `art_quote`, `art_lasttransaction`, `art_dimh`, `art_diml1`, `art_diml2`,`sur_id`, `tal_id`, `art_upload_date`, `art_format`) 
+                      VALUES ('".$fileName."','".$post['description']."','refid','a','','','','','".$userId."','".$post['art_tal']."','".date("Y-m-d")."','".$fileType."')";
             
             $db->setQuery($query);
             $db->query();
@@ -317,7 +318,7 @@ class modEasyFileUploaderHelper
             $db = JFactory::getDbo();
             $user	= JFactory::getUser();
             $userId	= (int) $user->get('id');
-            return $data['name ']['0'];
+            return $data['name']['0'];
 //            return $query = "INSERT INTO `tblz_arts`(`art_name`, `art_desc`, `art_refid`, `art_quote`, `art_lasttransaction`, `art_dimh`, `art_diml1`, `art_diml2`, `st_id`, `sur_id`, `tal_id`, `art_path`) 
 //                      VALUES ('".$data['name']['0']."','','','a','','','','','".$userId."','','','".$data['tmp_name']['0']."')";
             
