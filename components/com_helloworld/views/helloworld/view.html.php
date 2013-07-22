@@ -10,12 +10,16 @@ jimport('joomla.application.component.view');
  */
 class HelloWorldViewHelloWorld extends JView
 {
-	// Overwriting JView display method
+    public $me;
+
+    // Overwriting JView display method
 	function display($tpl = null) 
 	{
 		// Assign data to the view
 		$this->item = $this->get('Item');
- 
+                $model = $this->getModel('helloworld');
+                
+                
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
 		{

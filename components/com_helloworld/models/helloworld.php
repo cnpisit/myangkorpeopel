@@ -14,6 +14,10 @@ class HelloWorldModelHelloWorld extends JModelItem
 	 * @var object item
 	 */
 	protected $item;
+        /**
+	 * @var object arts
+	 */
+	public $arts;
  
 	/**
 	 * Method to auto-populate the model state.
@@ -87,6 +91,11 @@ class HelloWorldModelHelloWorld extends JModelItem
 		}
 		return $this->item;
 	}
+        
+        public function selectArt()
+        {
+            return $this->arts = "this is call from controller";
+        }
         
         
 }
