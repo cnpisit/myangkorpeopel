@@ -94,7 +94,7 @@ class HelloWorldModelHelloWorld extends JModelItem
         
         public function selectArt()
         {
-            return $this->arts = "this is call from controller";
+            return $this->arts = "this is call from Model pass data to controller and than to view";
         }
         
         

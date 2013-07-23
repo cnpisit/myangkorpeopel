@@ -17,13 +17,14 @@ class HelloWorldControllerHelloWorld extends JControllerForm
 
 	public function showMe()
         {
+            
             $myModel = $this->getModel('helloworld');
             $res = $myModel->selectArt();
-//            $view = getView($name= 'showMe', $type= '', $prefix= '', $config=array());
-            $view = $this->getView('showMe', 'html'); // get the view
-//            $view->assignRef('res', $res); // set the data to the view
+            $view = $this->getView($name= 'showMe', $type= 'html', $prefix= '', $config=array());
+//            $this->setRedirect('index.php?option=com_hrm&view=hrmupload',$res);
+//            $view = $this->getView('showMe', 'html'); // get the view
+            $view->assignRef('res', $_GET['id']); // set the data to the view
             $view->display(); // show the view          
         }
-
 }
  

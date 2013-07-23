@@ -27,6 +27,9 @@ class HelloWorldViewShowMe extends JView
 //			return false;
 //		}
 //		// Display the view
+//                $model = $this->getModel();
+                
+//                var_dump($model);
 		parent::display($tpl);
 	}
 }

@@ -9,11 +9,26 @@ defined('_JEXEC') or die('Restricted access');
 <!--<a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=updhelloworld.test')?>">just click</a>-->
 <a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.showMe')?>">just click</a>
 <?php 
-    $user = JFactory::getUser();
-    $userId = (int) $user->get('id');
-    var_dump($userId);
+//    $user = JFactory::getUser();
+//    $userId = (int) $user->get('id');
+//    var_dump($userId);
+//    
+//    $model = $this->getModel('HelloWorld');
+//    $data = $model->selectArt();
+//    var_dump($data);
+//    
+     $db = JFactory::getDbo();
+    $sql = 'select * from tblz_arts';
     
-    $model = $this->getModel('HelloWorld');
-    $data = $model->selectArt();
-    var_dump($data);
+    $db->setQuery($sql);
+    $arts = $db->loadObjectList();
+//    var_dump($arts);
+    
+    foreach ($arts as $art)
+    {
+         $id = $art->art_id;
+         ?><a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.showMe&id='.$id)?>"><?php var_dump($art)?></a><?php
+    }
+    
+//    var_dump($this->res);
 ?>

@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 //    
 //    $model = $this->getModel('HelloWorld');
 //    $data = $model->selectArt();
-//    var_dump($res);
+var_dump($this->res);
     echo 'this is view ';
     
 ?>
