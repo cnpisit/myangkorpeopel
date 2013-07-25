@@ -32,20 +32,36 @@ defined('_JEXEC') or die('Restricted access');
     
          $id = $art->art_id;
          ?>
-        <div class="layout-arts" style="width: 24%; height: 100%;float: left; padding:5px">
+        <div class="layout-arts" style="width: 25%; height: 100%; float: left; padding:15px">
+            
             <span>
              <a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.detail&id='.$id)?>">
                  
                   <?php 
                  if($art->art_format=="image/jpeg")
                  {
-                     echo '<img src="media/upload/'.$username[0]->username.'/'.$art->art_name.'">';
-                 }  else {
-                     var_dump($art);
+                     echo '<img src="media/upload/'.$username[0]->username.'/'.$art->art_name.'">'; 
+                     
+                 }  elseif($art->art_format == "audio/mp3") {
+//                     echo '<img src="media/upload/'.$username[0]->username.'/'.$art->art_name.'">'; 
+                     echo '<audio controls width="auto">
+                            <source src="media/upload/'.$username[0]->username.'/'.$art->art_name.'" type="audio/mpeg">
+                            <source src="media/upload/'.$username[0]->username.'/'.$art->art_name.'" type="audio/ogg">
+                            Your browser does not support this audio format.
+                           </audio>';
+                 } elseif ($art->art_format=="video/mp4") {
+//                     echo '<img src="media/upload/'.$username[0]->username.'/'.$art->art_name.'">'; 
+                     echo '<video width="280" height="auto%" controls>
+                           <source src="media/upload/'.$username[0]->username.'/'.$art->art_name.'" type="video/mp4">
+                           </video>';
+                 } else {
+                    echo '<img src="media/upload/'.$username[0]->username.'/'.$art->art_name.'">'; 
+//                    var_dump($art);
                  }
                  ?>
              </a>
             </span>
+            <span class="title-arts"><label><?php echo $art->art_name; ?></label></span>
         </div>   
          <?php
     }

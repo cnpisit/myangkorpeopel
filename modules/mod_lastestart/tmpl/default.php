@@ -35,7 +35,7 @@ if (!empty($art)) {
         <?php
     } elseif ($array['art_format']=="video/mp4") {
         ?>
-        <script type="text/javascript" src="modules/mod_lastestart/tmpl/jwplayer.js"></script>
+<!--        <script type="text/javascript" src="modules/mod_lastestart/tmpl/jwplayer.js"></script>
         <div id="myElement">Loading the player...</div>
         <script type="text/javascript">
             jwplayer("myElement").setup({
@@ -44,7 +44,10 @@ if (!empty($art)) {
                  "width": "100%", 
                 "height": "250px"
             });
-        </script>
+        </script>-->
+        <video width="100%" height="40%" controls>
+        <source src="media/upload/<?php echo $userName ;?>/<?php echo $array['art_name'];?>" type="video/mp4">
+        </video>
         <?php
     }else {
         echo '<a class="modal" href="media/upload/' . $userName . '/' . $array['art_name'] . '">';

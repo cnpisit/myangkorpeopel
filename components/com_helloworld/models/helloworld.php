@@ -97,5 +97,33 @@ class HelloWorldModelHelloWorld extends JModelItem
             return $this->arts = "this is call from Model pass data to controller and than to view";
         }
         
+        public function selectArtDetail($art_id)
+        {
+                   $db = JFactory::getDbo();
+                   
+                   $sql = 'select a.art_id, a.art_name, a.art_desc, a.art_refid, a.art_quote, a.art_lasttransaction, a.art_dimh, a.art_diml1, a.art_diml2, a.sur_id, a.tal_id, a.art_upload_date, a.art_format, u.username from tblz_arts a inner join tbl_users u on a.sur_id = u.id where a.art_id='.$art_id;
+                   $db->setQuery($sql);
+                   
+                   return $art = $db->loadObjectList();          
+        }
+        
+        public function updateArt($data, $id)
+        {
+            $db = JFactory::getDbo();
+            
+            $sql = 'update tblz_arts set art_desc="'.$data['art_desc'].'", art_refid="'.$data['art_refid'].'", art_quote="'.$data['art_quote'].'", art_lasttransaction="'.$data['art_lasttransaction'].'", art_dimh="'.$data['art_dimh'].'"'.' where art_id='.$id;
+            $db->setQuery($sql);
+            $db->query();
+        }
+        
+        public function deleteArt($id)
+        {
+            $db =  JFactory::getDbo();
+            
+            $sql = 'DELETE FROM tblz_arts WHERE art_id ='.$id;
+            
+            $db->setQuery($sql);
+            $db->query();
+        }
         
 }
