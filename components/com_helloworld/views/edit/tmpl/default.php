@@ -57,7 +57,7 @@ $art = $this->art[0];
                     </select>
                 </div>
             </div>
-            <div>
+            <div class="control">
                 <input type="submit" class="btn" value="Save">
             </div>
      </fieldset>

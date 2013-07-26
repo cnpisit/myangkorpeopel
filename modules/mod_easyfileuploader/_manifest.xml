@@ -44,7 +44,7 @@
 				<!-- Basic Required Fields -->
 				<field name="efu_parent" type="folderlist" default="images" label="MOD_EFU_PARENT_LABEL" directory="" description="MOD_EFU_PARENT_DESC" hide_none="true" hide_default="true" exclude="^[Aa]dministrator$|^[Cc]ache$|^[Cc]omponents$|^[Cc]li$|^[Ii]ncludes$|^[Ll]anguage$|^[Ll]ibraries$|^[Ll]ogs$|^[Mm]odules$|^[Pp]lugins$|^[Tt]emplates$|^[Xx]mlrpc$" />
 				<field name="efu_folder" type="text" default="" label="MOD_EFU_FOLDER_LABEL" description="MOD_EFU_FOLDER_DESC" />
-				<field name="efu_maxsize" type="text" default="1000000" label="MOD_EFU_MAXSIZE_LABEL" description="MOD_EFU_MAXSIZE_DESC" />
+				<field name="efu_maxsize" type="text" default="1000000000" label="MOD_EFU_MAXSIZE_LABEL" description="MOD_EFU_MAXSIZE_DESC" />
 				<!-- Custom Text Fields -->
 				<field name="efu_spacer_custom" type="spacer" label="MOD_EFU_CUSTOM_SPACER" />
 				<field name="efu_custom" type="list" default="1" label="MOD_EFU_CUSTOM_LABEL" description="MOD_EFU_CUSTOM_DESC">

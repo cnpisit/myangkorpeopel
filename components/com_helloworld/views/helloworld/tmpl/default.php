@@ -32,9 +32,25 @@ defined('_JEXEC') or die('Restricted access');
     
          $id = $art->art_id;
          ?>
-        <div class="layout-arts" style="width: 25%; height: 100%; float: left; padding:15px">
-            
-            <span>
+<style>
+    .layout-arts 
+    {
+        border-radius: 7px;
+        background-color: #DDDDDD;
+        margin: 10px;
+        padding: 10px;
+        width: 26%;
+        height: 100%;
+        float: left;
+    }
+    img
+    {
+        width: 250px;
+        height: 260px;
+    }
+</style>
+<div class="layout-arts">
+            <span class="art">
              <a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.detail&id='.$id)?>">
                  
                   <?php 
@@ -61,10 +77,9 @@ defined('_JEXEC') or die('Restricted access');
                  ?>
              </a>
             </span>
-            <span class="title-arts"><label><?php echo $art->art_name; ?></label></span>
+            <span class="title-arts"><label class="art-desc"><?php echo $art->art_name; ?></label></span>
         </div>   
          <?php
     }
     
-//    var_dump($this->res);
 ?>
